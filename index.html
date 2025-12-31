@@ -21,19 +21,19 @@
 
   /* ==== HEADER / HERO SECTION ==== */
   header {
-    min-height: 100vh;
-    display:flex;
-    flex-direction:row;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 10%;
-    background: linear-gradient(135deg, white 40%, #e8ecff);
-    border-bottom: 2px solid #d8dfff;
-  }
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;  /* Changed to center vertically */
+  justify-content: space-between;
+  padding: 0 10%;
+  background: linear-gradient(135deg, white 40%, #e8ecff);
+  border-bottom: 2px solid #d8dfff;
+}
 
-  .home-left{
-    max-width:50%;
-  }
+.home-left {
+  max-width: 50%;
+}
 
   .home-left h1{
     font-size:3.4rem;
@@ -101,23 +101,21 @@
   }
 
   /* RIGHT SIDE IMAGE */
-.home-right{
-  flex:1;
-  display:flex;
-  justify-content:flex-end;
-  align-items:center;   
-  padding-top:0;        
+.home-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;  
 }
 
-.home-right img{
-  width:380px;
-  height:380px;
-  border-radius:50%;
-  object-fit:cover;
-  border:6px solid var(--primary);
-  box-shadow:0 15px 35px rgba(0,0,0,.15);
+.home-right img {
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid var(--primary);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, .15);
 }
-
 
   /* ================= NAVIGATION & OTHER SECTIONS (UNCHANGED) ================= */
 
