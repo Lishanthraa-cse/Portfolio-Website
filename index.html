@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lishanthraa R | Portfolio</title>
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-  *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+  *{margin:0;padding:0;box-sizing:border-box;}
   body{font-family:'Poppins',sans-serif;background:#f6f6f6;color:#1a1a1a;line-height:1.7;transition:.3s;}
   body.dark{background:#121212;color:#e7e7e7;}
 
@@ -19,42 +19,68 @@
     align-items:center;text-align:center;
     background:linear-gradient(135deg,#002b5c,#005792);color:white;padding:0 10%;
   }
-  header h1{font-size:3rem;font-weight:600;margin-bottom:10px;}
-  header p{font-size:1.25rem;max-width:700px;opacity:.9;}
+  header h1{font-size:3rem;font-weight:600;margin-bottom:10px;letter-spacing:1px;}
+  header p{font-size:1.25rem;max-width:700px;opacity:.9;margin-bottom:15px;}
   .btn{
-    margin-top:20px;padding:12px 22px;font-weight:600;border-radius:6px;
+    padding:12px 25px;font-weight:600;border-radius:6px;
     background:white;color:#002b5c;text-decoration:none;display:inline-block;
     transition:.3s;
   }
   .btn:hover{background:#e9e9e9;transform:translateY(-3px);}
 
   /* Navigation */
-  nav{position:fixed;top:10px;right:10px;background:#002b5c;padding:10px 15px;border-radius:8px;z-index:999;text-align:center;}
-  nav button{background:none;border:none;color:white;margin:0 8px;font-weight:600;font-size:14px;cursor:pointer;transition:.3s;}
-  nav button:hover{color:#76b9ff;}
+  nav{
+    position:fixed;top:20px;right:20px;background:#002b5c;padding:12px 18px;border-radius:10px;
+    z-index:999;text-align:center;display:flex;gap:12px;
+  }
+  nav button{
+    background:none;border:none;color:white;font-weight:500;font-size:14px;
+    cursor:pointer;transition:.3s;padding:6px 12px;border-radius:4px;
+  }
+  nav button:hover{background:#005792;}
 
   /* Sections */
-  .section{padding:70px 10%;max-width:1150px;margin:auto;display:none;opacity:0;transition:opacity .6s;}
+  .section{
+    padding:70px 10%;max-width:1150px;margin:auto;
+    display:none;opacity:0;transition:opacity .6s ease-in-out;
+  }
   .section.active{display:block;opacity:1;}
+  .fade-out{opacity:0;transition:opacity .5s ease-in-out;}
+
   .section-title{
     font-size:2rem;font-weight:600;margin-bottom:25px;
     border-left:5px solid #005792;padding-left:12px;
   }
   body.dark .section-title{border-color:#76b9ff;}
 
-  /* Grid */
+  /* Typography & Lists */
+  h3{margin-top:25px;font-weight:600;color:#002b5c;}
+  ul{margin:10px 0 20px 20px;line-height:1.6;}
+  li{margin-bottom:8px;}
+
+  /* Cards & Grid */
   .grid{display:grid;gap:25px;}
   .three-col{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
-
-  /* Cards */
   .card{
-    background:white;padding:22px;border-radius:10px;
-    box-shadow:0 4px 10px rgba(0,0,0,.08);transition:.3s;
+    background:white;padding:25px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,.08);
+    transition:.4s;line-height:1.5;
   }
-  body.dark .card{background:#1d1d1d;box-shadow:0 4px 15px rgba(255,255,255,.05);}
-  .card:hover{transform:translateY(-6px);}
+  .card:hover{transform:translateY(-6px);box-shadow:0 8px 20px rgba(0,0,0,.15);}
+  body.dark .card{background:#1d1d1d;box-shadow:0 6px 18px rgba(255,255,255,.05);}
 
-  footer{text-align:center;padding:22px;background:#002b5c;color:white;margin-top:60px;}
+  /* Contact Form */
+  form input,form textarea{
+    width:100%;padding:12px;margin:10px 0;border-radius:6px;border:none;background:#e7e7e7;
+    font-size:14px;
+  }
+  body.dark form input,body.dark form textarea{background:#2c2c2c;color:white;}
+  form button{
+    padding:12px 25px;background:#005792;border:none;color:white;font-weight:600;border-radius:6px;cursor:pointer;
+  }
+  form button:hover{background:#003e6e;}
+
+  /* Footer */
+  footer{text-align:center;padding:22px;background:#002b5c;color:white;margin-top:60px;font-size:14px;}
 
   /* Floating buttons */
   #dark-toggle{
@@ -62,31 +88,18 @@
     padding:12px;border-radius:50%;cursor:pointer;font-size:18px;transition:.3s;
   }
   body.dark #dark-toggle{background:white;color:#002b5c;}
-
   #contact-btn{
     position:fixed;bottom:25px;right:25px;background:#005792;color:white;
     padding:14px;border-radius:50%;cursor:pointer;font-size:20px;transition:.3s;
   }
   #contact-btn:hover{background:#003e6e;}
-
-  /* Contact form */
-  form input,form textarea{
-    width:100%;padding:12px;margin:8px 0;border-radius:6px;
-    border:none;background:#e7e7e7;
-  }
-  body.dark form input,body.dark form textarea{background:#2c2c2c;color:white;}
-  form button{
-    padding:12px 20px;background:#005792;border:none;color:white;
-    font-weight:600;border-radius:6px;cursor:pointer;
-  }
-  form button:hover{background:#003e6e;}
 </style>
 </head>
 
 <body>
 
 <!-- HEADER -->
-<header id="home">
+<header id="home" class="section active">
   <h1>Lishanthraa R</h1>
   <p>Aspiring Full Stack & Data-Driven Software Professional with strong analytical and application development skills.</p>
   <a class="btn" href="#" target="_blank">Download Resume</a>
@@ -104,38 +117,30 @@
 <section id="about" class="section">
   <h2 class="section-title">About Me</h2>
   <p>
-    Aspiring software professional with core strengths in building full stack applications and data-driven models, with strong analytical, programming, and implementation skills applied across academic and practical projects. 
-    Experienced in developing scalable solutions using modern frameworks and applying data-centric techniques to enhance application performance. 
-    Passionate about translating real-world problems into optimized software systems through clean design, efficient logic, and continuous learning.
+    Aspiring software professional with core strengths in full stack applications and data-driven models. Skilled in analytical problem-solving, programming, and developing scalable software solutions.
   </p>
-
-  <h3 style="margin-top:25px;font-weight:600;">Technical Skills</h3>
+  <h3>Technical Skills</h3>
   <ul>
-    <li>HTML, CSS, JavaScript, React JS</li>
-    <li>Node JS, MongoDB</li>
+    <li>HTML, CSS, JavaScript, React JS, Node JS, MongoDB</li>
     <li>Java, C Programming</li>
     <li>Microsoft Excel, Power BI</li>
   </ul>
-
-  <h3 style="margin-top:25px;font-weight:600;">Soft Skills</h3>
+  <h3>Soft Skills</h3>
   <ul>
     <li>Team Collaboration</li>
     <li>Communication</li>
     <li>Adaptability & Continuous Learning</li>
   </ul>
-
-  <h3 style="margin-top:25px;font-weight:600;">Education</h3>
+  <h3>Education</h3>
   <ul>
-    <li>M.Tech CSE (Integrated 5 Years) — Sri Ramakrishna Engineering College (8.3 CGPA) — 2022–2027</li>
+    <li>M.Tech CSE — Sri Ramakrishna Engineering College (8.3 CGPA) — 2022–2027</li>
     <li>HSC — Hindusthan Matric Hr Sec School (91%) — 2022</li>
     <li>SSLC — Hindusthan Matric Hr Sec School (90%) — 2020</li>
   </ul>
-
-  <h3 style="margin-top:25px;font-weight:600;">Certifications</h3>
+  <h3>Certifications</h3>
   <ul>
     <li>NPTEL — Cyber Security & Privacy</li>
     <li>NPTEL — Software Testing</li>
-    <li>NPTEL — Privacy and Security in Online Social Media</li>
     <li>IBM — Python 101 for Data Science</li>
     <li>IBM — Data Science Tools</li>
     <li>Cisco — Introduction to Data Science</li>
@@ -147,30 +152,25 @@
 <!-- EXPERIENCE + PROJECTS -->
 <section id="projects" class="section">
   <h2 class="section-title">Professional Experience & Projects</h2>
-
-  <h3 style="margin-top:10px;font-weight:600;">Professional Experience</h3>
+  <h3>Professional Experience</h3>
   <ul>
     <li><strong>Intern @ Kitkat Software Technologies</strong> — Developed responsive web pages, worked with UI layouts and routing. (Jun 2024)</li>
     <li><strong>Intern @ Twisys Infotech</strong> — Implemented AI-based design elements in data-focused web applications. (Dec 2024)</li>
-    <li><strong>Intern @ C-DAC Chennai</strong> —Contributed to dynamic web application builds and backend integration. (Jul–Dec 2025)</li>
+    <li><strong>Intern @ C-DAC Chennai</strong> — Contributed to dynamic web application builds and backend integration. (Jul–Dec 2025)</li>
   </ul>
-
-  <h3 style="margin-top:35px;font-weight:600;">Projects</h3>
+  <h3>Projects</h3>
   <div class="grid three-col">
     <div class="card">
       <h3>Medicine Recommendation System</h3>
-      <p>Developed a system that predicts diseases based on symptoms and recommends suitable medicines using machine learning.
-        Integrated a lightweight API for seamless frontend interaction and efficient data processing.</p>
+      <p>Predicts diseases based on symptoms and recommends suitable medicines. Integrated lightweight API for seamless frontend interaction.</p>
     </div>
     <div class="card">
       <h3>AI-Powered Recipe Assistant</h3>
-      <p>Built a conversational assistant capable of generating recipes, meal plans, and ingredient-based suggestions using NLP techniques.
-        Implemented voice-based query handling for hands-free user interaction and enhanced accessibility.</p>
+      <p>Conversational assistant generating recipes and meal plans using NLP techniques. Voice-based query handling included.</p>
     </div>
     <div class="card">
       <h3>Canteen Management System</h3>
-      <p>Designed and deployed a full-stack solution enabling digital QR-based ordering and order tracking for campus canteens.
-        Integrated an AI recommendation module to suggest food items based on user preferences and purchase history.</p>
+      <p>Full-stack solution with digital QR ordering and AI recommendations for user preferences and purchase history.</p>
     </div>
   </div>
 </section>
@@ -190,31 +190,34 @@
 
 <!-- Floating buttons -->
 <div id="dark-toggle" onclick="document.body.classList.toggle('dark')">🌙</div>
-<div id="contact-btn" onclick="showSection('contact')">✉️</div>
+<div id="contact-btn" onclick="switchSection('contact')">✉️</div>
 
 <script>
-  const buttons = document.querySelectorAll('nav button');
-  const sections = document.querySelectorAll('.section');
+const buttons = document.querySelectorAll('nav button');
+const sections = document.querySelectorAll('.section');
 
-  // Hide all sections initially
-  sections.forEach(s => s.style.display = 'none');
-
-  function showSection(id){
-    sections.forEach(s => {
-      if(s.id === id){
-        s.style.display = 'block';
-        setTimeout(()=> s.classList.add('active'), 50); // fade-in animation
-        s.scrollIntoView({behavior:'smooth'});
-      } else {
-        s.classList.remove('active');
-        s.style.display = 'none';
-      }
-    });
+function switchSection(id){
+  const current = document.querySelector('.section.active');
+  if(current && current.id !== id){
+    current.classList.remove('active');
+    current.classList.add('fade-out');
+    setTimeout(()=>{
+      current.style.display='none';
+      current.classList.remove('fade-out');
+      const next = document.getElementById(id);
+      next.style.display='block';
+      setTimeout(()=> next.classList.add('active'),50);
+      next.scrollIntoView({behavior:'smooth'});
+    },500);
   }
+}
 
-  buttons.forEach(btn => {
-    btn.addEventListener('click', ()=> showSection(btn.dataset.target));
-  });
+// Initial home section visible
+document.getElementById('home').style.display='block';
+document.getElementById('home').classList.add('active');
+
+// Button events
+buttons.forEach(btn => btn.addEventListener('click', ()=> switchSection(btn.dataset.target)));
 </script>
 
 </body>
