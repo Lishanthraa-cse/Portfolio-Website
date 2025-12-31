@@ -15,7 +15,7 @@
 
   /* ==== COLORS ==== */
   :root{
-    --primary:#4A6CF7;  /* new professional royal blue */
+    --primary:#97A776;  /* new professional royal blue */
     --primary-light:#89A4FF;
   }
 
@@ -101,14 +101,22 @@
   }
 
   /* RIGHT SIDE IMAGE */
-  .home-right img{
-    width:380px;
-    height:380px;
-    border-radius:50%;
-    object-fit:cover;
-    border:6px solid var(--primary);
-    box-shadow:0 15px 35px rgba(0,0,0,.15);
-  }
+  .home-right{
+  flex:1;
+  display:flex;
+  justify-content:flex-end;
+  align-items:flex-start;   /* moves image downward */
+  padding-top:50px;         /* adjust this value to control offset */
+}
+
+.home-right img{
+  width:380px;
+  height:380px;
+  border-radius:50%;
+  object-fit:cover;
+  border:6px solid var(--primary);
+  box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
 
   /* ================= NAVIGATION & OTHER SECTIONS (UNCHANGED) ================= */
 
