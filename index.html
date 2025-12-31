@@ -14,11 +14,79 @@
   body.dark{background:#121212;color:#e7e7e7;}
 
   /* Header */
-  header{
-    min-height:100vh;display:flex;flex-direction:column;justify-content:center;
-    align-items:center;text-align:center;
-    background:linear-gradient(135deg,#002b5c,#005792);color:white;padding:0 10%;
-  }
+ /* Home Layout Enhancements */
+header {
+  min-height:100vh;
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:space-between;
+  text-align:left;
+  padding:0 10%;
+}
+
+/* Home Left Content */
+.home-left {
+  max-width:50%;
+}
+
+.home-left h1 {
+  font-size:3.2rem;
+  font-weight:600;
+  line-height:1.3;
+}
+
+.home-left p.tagline {
+  font-size:1.25rem;
+  opacity:.95;
+  margin:10px 0 20px;
+}
+
+.home-left ul {
+  margin-top:15px;
+  font-size:1.05rem;
+  list-style:none;
+}
+
+.home-left li::before {
+  content: "✔ ";
+  color:#00ffdd;
+  font-weight:bold;
+}
+
+/* Social Icons */
+.social-icons {
+  display:flex;
+  gap:18px;
+  margin:20px 0;
+}
+
+.social-icons a {
+  color:white;
+  font-size:1.8rem;
+  transition:.3s;
+}
+
+.social-icons a:hover {
+  color:#00ffdd;
+  transform:translateY(-4px);
+}
+
+/* Home Right - Image */
+.home-right img {
+  width:360px;
+  height:360px;
+  object-fit:cover;
+  border-radius:50%;
+  border:5px solid #00ffdd;
+  box-shadow:0 8px 25px rgba(0,0,0,.25);
+}
+
+/* Resume Button */
+.btn.resume {
+  margin-top:10px;
+}
+
   header h1{font-size:3rem;font-weight:600;margin-bottom:10px;letter-spacing:1px;}
   header p{font-size:1.25rem;max-width:700px;opacity:.9;margin-bottom:15px;}
   .btn{
@@ -100,9 +168,34 @@
 
 <!-- HEADER -->
 <header id="home" class="section active">
-  <h1>Lishanthraa R</h1>
-  <p>Aspiring Full Stack & Data-Driven Software Professional with strong analytical and application development skills.</p>
-  <a class="btn" href="#" target="_blank">Download Resume</a>
+
+  <div class="home-left">
+    <h1>Hi, I'm <span style="color:#00ffdd;">Lishanthraa R</span></h1>
+    <p class="tagline">
+      Aspiring Full Stack & Data-Driven Software Professional with strong analytical and application development skills.
+    </p>
+
+    <ul>
+      <li>Building responsive websites & AI-powered applications</li>
+      <li>Focused on backend performance & clean development practices</li>
+      <li>Strong analytical & problem-solving mindset</li>
+    </ul>
+
+    <!-- SOCIAL ICONS -->
+    <div class="social-icons">
+      <a href="https://github.com/YOUR_USERNAME" target="_blank">🐙</a>
+      <a href="https://linkedin.com/in/YOUR_PROFILE" target="_blank">🔗</a>
+      <a href="mailto:yourmail@gmail.com">✉️</a>
+    </div>
+
+    <!-- RESUME DOWNLOAD -->
+    <a class="btn resume" href="Formal resume.pdf" download>Download Resume</a>
+  </div>
+
+  <div class="home-right">
+    <img src="photo.jpg" alt="Lishanthraa R">
+  </div>
+
 </header>
 
 <!-- NAVIGATION -->
@@ -121,7 +214,8 @@
   </p>
   <h3>Technical Skills</h3>
   <ul>
-    <li>HTML, CSS, JavaScript, React JS, Node JS, MongoDB</li>
+    <li>HTML, CSS, JavaScript, React JS</li> 
+    <li>Node JS, MongoDB, Express JS</li>
     <li>Java, C Programming</li>
     <li>Microsoft Excel, Power BI</li>
   </ul>
@@ -133,7 +227,7 @@
   </ul>
   <h3>Education</h3>
   <ul>
-    <li>M.Tech CSE — Sri Ramakrishna Engineering College (8.3 CGPA) — 2022–2027</li>
+    <li>M.Tech CSE (Integrated 5 Years) — Sri Ramakrishna Engineering College (8.3 CGPA) — 2022–2027</li>
     <li>HSC — Hindusthan Matric Hr Sec School (91%) — 2022</li>
     <li>SSLC — Hindusthan Matric Hr Sec School (90%) — 2020</li>
   </ul>
@@ -141,8 +235,11 @@
   <ul>
     <li>NPTEL — Cyber Security & Privacy</li>
     <li>NPTEL — Software Testing</li>
+    <li>NPTEL — Privacy and Security in Online Social Media</li>
     <li>IBM — Python 101 for Data Science</li>
     <li>IBM — Data Science Tools</li>
+    <li>Scaler — React JS</li>
+    <li>Scaler — Node JS</li>
     <li>Cisco — Introduction to Data Science</li>
     <li>SkillRack — C & Python Programming</li>
     <li>Cambridge — Business English Certificate</li>
@@ -162,15 +259,24 @@
   <div class="grid three-col">
     <div class="card">
       <h3>Medicine Recommendation System</h3>
-      <p>Predicts diseases based on symptoms and recommends suitable medicines. Integrated lightweight API for seamless frontend interaction.</p>
+      <p>Developed an AI-powered Medicine Recommendation System to predict diseases based on symptoms.</p>
+     <li>The system provides personalized health insights, including medications, precautions, diets, and workouts.</li>
+     <li>Implemented a voice-enabled interface for accessibility.</li>
+     <li>Technologies used: Flask, Scikit-learn (SVM), Pandas.</li>
     </div>
     <div class="card">
       <h3>AI-Powered Recipe Assistant</h3>
       <p>Conversational assistant generating recipes and meal plans using NLP techniques. Voice-based query handling included.</p>
+    <li> Helps users find recipes based on ingredients, dietary preferences, or cooking time.</li>
+    <li> Features voice-based search, smart meal planner, and interactive cooking guide.</li>
+    <li> Technologies used: Flask, Pandas, FuzzyWuzzy, speech_recognition, pyttsx3.</li>
     </div>
     <div class="card">
       <h3>Canteen Management System</h3>
       <p>Full-stack solution with digital QR ordering and AI recommendations for user preferences and purchase history.</p>
+     <li>Features AI-powered meal recommendations and QR-based ordering system with diet chatbot.</li>
+     <li>Streamlines online menu browsing, order processing, and inventory tracking.</li>
+     <li>Technologies used: React, Node.js, Express.js, MongoDB.</li>
     </div>
   </div>
 </section>
