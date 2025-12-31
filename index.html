@@ -13,101 +13,115 @@
   body{font-family:'Poppins',sans-serif;background:#f6f6f6;color:#1a1a1a;line-height:1.7;transition:.3s;}
   body.dark{background:#121212;color:#e7e7e7;}
 
-  /* Header */
- /* Home Layout Enhancements */
-header {
-  min-height:100vh;
-  display:flex;
-  flex-direction:row;
-  align-items:center;
-  justify-content:space-between;
-  text-align:left;
-  padding:0 10%;
-}
+  /* ==== COLORS ==== */
+  :root{
+    --primary:#4A6CF7;  /* new professional royal blue */
+    --primary-light:#89A4FF;
+  }
 
-/* Home Left Content */
-.home-left {
-  max-width:50%;
-}
+  /* ==== HEADER / HERO SECTION ==== */
+  header {
+    min-height: 100vh;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 10%;
+    background: linear-gradient(135deg, white 40%, #e8ecff);
+    border-bottom: 2px solid #d8dfff;
+  }
 
-.home-left h1 {
-  font-size:3.2rem;
-  font-weight:600;
-  line-height:1.3;
-}
+  .home-left{
+    max-width:50%;
+  }
 
-.home-left p.tagline {
-  font-size:1.25rem;
-  opacity:.95;
-  margin:10px 0 20px;
-}
+  .home-left h1{
+    font-size:3.4rem;
+    font-weight:600;
+    line-height:1.3;
+    margin-bottom:15px;
+  }
 
-.home-left ul {
-  margin-top:15px;
-  font-size:1.05rem;
-  list-style:none;
-}
+  .home-left h1 span{
+    color:var(--primary);
+    font-weight:700;
+  }
 
-.home-left li::before {
-  content: "✔ ";
-  color:#00ffdd;
-  font-weight:bold;
-}
+  .home-left .tagline{
+    font-size:1.3rem;
+    margin-bottom:25px;
+    opacity:.9;
+  }
 
-/* Social Icons */
-.social-icons {
-  display:flex;
-  gap:18px;
-  margin:20px 0;
-}
+  .home-left ul{
+    font-size:1.05rem;
+    list-style:none;
+    margin-top:12px;
+  }
+  .home-left li{
+    margin-bottom:10px;
+  }
+  .home-left li::before{
+    content:"✔ ";
+    color:var(--primary);
+    font-weight:600;
+  }
 
-.social-icons a {
-  color:white;
-  font-size:1.8rem;
-  transition:.3s;
-}
+  /* SOCIAL ICONS */
+  .social-icons{
+    margin:25px 0;
+    display:flex;
+    gap:20px;
+  }
+  .social-icons a{
+    font-size:1.8rem;
+    color:#333;
+    transition:.3s;
+    text-decoration:none;
+  }
+  .social-icons a:hover{
+    color:var(--primary);
+    transform:translateY(-4px);
+  }
 
-.social-icons a:hover {
-  color:#00ffdd;
-  transform:translateY(-4px);
-}
-
-/* Home Right - Image */
-.home-right img {
-  width:360px;
-  height:360px;
-  object-fit:cover;
-  border-radius:50%;
-  border:5px solid #00ffdd;
-  box-shadow:0 8px 25px rgba(0,0,0,.25);
-}
-
-/* Resume Button */
-.btn.resume {
-  margin-top:10px;
-}
-
-  header h1{font-size:3rem;font-weight:600;margin-bottom:10px;letter-spacing:1px;}
-  header p{font-size:1.25rem;max-width:700px;opacity:.9;margin-bottom:15px;}
-  .btn{
-    padding:12px 25px;font-weight:600;border-radius:6px;
-    background:white;color:#002b5c;text-decoration:none;display:inline-block;
+  /* RESUME BUTTON */
+  .btn.resume{
+    padding:12px 25px;
+    font-weight:600;
+    border-radius:6px;
+    background:var(--primary);
+    color:white;
+    text-decoration:none;
+    display:inline-block;
     transition:.3s;
   }
-  .btn:hover{background:#e9e9e9;transform:translateY(-3px);}
+  .btn.resume:hover{
+    background:var(--primary-light);
+    transform:translateY(-3px);
+  }
 
-  /* Navigation */
+  /* RIGHT SIDE IMAGE */
+  .home-right img{
+    width:380px;
+    height:380px;
+    border-radius:50%;
+    object-fit:cover;
+    border:6px solid var(--primary);
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+  }
+
+  /* ================= NAVIGATION & OTHER SECTIONS (UNCHANGED) ================= */
+
   nav{
-    position:fixed;top:20px;right:20px;background:#002b5c;padding:12px 18px;border-radius:10px;
+    position:fixed;top:20px;right:20px;background:var(--primary);padding:12px 18px;border-radius:10px;
     z-index:999;text-align:center;display:flex;gap:12px;
   }
   nav button{
     background:none;border:none;color:white;font-weight:500;font-size:14px;
     cursor:pointer;transition:.3s;padding:6px 12px;border-radius:4px;
   }
-  nav button:hover{background:#005792;}
+  nav button:hover{background:var(--primary-light);}
 
-  /* Sections */
   .section{
     padding:70px 10%;max-width:1150px;margin:auto;
     display:none;opacity:0;transition:opacity .6s ease-in-out;
@@ -117,16 +131,10 @@ header {
 
   .section-title{
     font-size:2rem;font-weight:600;margin-bottom:25px;
-    border-left:5px solid #005792;padding-left:12px;
+    border-left:5px solid var(--primary);padding-left:12px;
   }
-  body.dark .section-title{border-color:#76b9ff;}
 
-  /* Typography & Lists */
-  h3{margin-top:25px;font-weight:600;color:#002b5c;}
-  ul{margin:10px 0 20px 20px;line-height:1.6;}
-  li{margin-bottom:8px;}
-
-  /* Cards & Grid */
+  /* Cards, forms, footer etc. untouched */
   .grid{display:grid;gap:25px;}
   .three-col{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
   .card{
@@ -134,43 +142,27 @@ header {
     transition:.4s;line-height:1.5;
   }
   .card:hover{transform:translateY(-6px);box-shadow:0 8px 20px rgba(0,0,0,.15);}
-  body.dark .card{background:#1d1d1d;box-shadow:0 6px 18px rgba(255,255,255,.05);}
 
-  /* Contact Form */
-  form input,form textarea{
-    width:100%;padding:12px;margin:10px 0;border-radius:6px;border:none;background:#e7e7e7;
-    font-size:14px;
-  }
-  body.dark form input,body.dark form textarea{background:#2c2c2c;color:white;}
-  form button{
-    padding:12px 25px;background:#005792;border:none;color:white;font-weight:600;border-radius:6px;cursor:pointer;
-  }
-  form button:hover{background:#003e6e;}
+  footer{text-align:center;padding:22px;background:var(--primary);color:white;margin-top:60px;font-size:14px;}
 
-  /* Footer */
-  footer{text-align:center;padding:22px;background:#002b5c;color:white;margin-top:60px;font-size:14px;}
-
-  /* Floating buttons */
   #dark-toggle{
-    position:fixed;bottom:25px;left:25px;background:#002b5c;color:white;
+    position:fixed;bottom:25px;left:25px;background:var(--primary);color:white;
     padding:12px;border-radius:50%;cursor:pointer;font-size:18px;transition:.3s;
   }
-  body.dark #dark-toggle{background:white;color:#002b5c;}
+  body.dark #dark-toggle{background:white;color:var(--primary);}
   #contact-btn{
-    position:fixed;bottom:25px;right:25px;background:#005792;color:white;
+    position:fixed;bottom:25px;right:25px;background:var(--primary);color:white;
     padding:14px;border-radius:50%;cursor:pointer;font-size:20px;transition:.3s;
   }
-  #contact-btn:hover{background:#003e6e;}
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- ============== HERO / HOME SECTION ============== -->
 <header id="home" class="section active">
-
   <div class="home-left">
-    <h1>Hi, I'm <span style="color:#00ffdd;">Lishanthraa R</span></h1>
+    <h1>Hi, I'm <span>Lishanthraa R</span></h1>
     <p class="tagline">
       Aspiring Full Stack & Data-Driven Software Professional with strong analytical and application development skills.
     </p>
@@ -181,21 +173,18 @@ header {
       <li>Strong analytical & problem-solving mindset</li>
     </ul>
 
-    <!-- SOCIAL ICONS -->
     <div class="social-icons">
-      <a href="https://github.com/YOUR_USERNAME" target="_blank">🐙</a>
-      <a href="https://linkedin.com/in/YOUR_PROFILE" target="_blank">🔗</a>
-      <a href="mailto:yourmail@gmail.com">✉️</a>
+      <a href="https://github.com/Lishanthraa-cse" target="_blank">🐙</a>
+      <a href="http://www.linkedin.com/in/lishanthraa-r-a258462a1" target="_blank">🔗</a>
+      <a href="mailto:lishanthraa.1805@gmail.com">✉️</a>
     </div>
 
-    <!-- RESUME DOWNLOAD -->
     <a class="btn resume" href="Formal resume.pdf" download>Download Resume</a>
   </div>
 
   <div class="home-right">
     <img src="photo.jpg" alt="Lishanthraa R">
   </div>
-
 </header>
 
 <!-- NAVIGATION -->
