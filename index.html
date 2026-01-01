@@ -341,13 +341,14 @@
     padding: 100px 10%;
     max-width: 1400px;
     margin: auto;
-    display: none;
     opacity: 0;
+    display: none;
     transition: opacity 0.6s ease-in-out;
   }
 
   .section.active {
     display: block;
+    opacity: 1;
     animation: fadeIn 0.8s ease-out forwards;
   }
 
@@ -893,8 +894,136 @@ body.dark .tech-stack-small .tech-tag {
   background: rgba(151, 167, 118, 0.2);
 }
 
-/* Responsive adjustments */
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.3;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 120px;
+  }
+
+  .hero-content {
+    width: 100%;
+    margin-bottom: 60px;
+  }
+
+  .hero-right-column {
+    width: 100%;
+  }
+
+  .image-container {
+    width: 300px;
+    height: 300px;
+  }
+
+  .hero-actions-right {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 768px) {
+  nav {
+    top: 15px;
+    right: 15px;
+    padding: 12px 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: calc(100% - 30px);
+  }
+
+  nav button {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.8rem;
+  }
+
+  .typed-text {
+    font-size: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certifications-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .floating-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  #dark-toggle {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  #contact-btn {
+    bottom: 20px;
+    right: 20px;
+  }
+  
   .timeline-item {
     padding: 20px;
   }
@@ -913,147 +1042,16 @@ body.dark .tech-stack-small .tech-tag {
   }
 }
 
-  /* Animations */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
-  }
-
-  @keyframes pulse {
-    0%, 100% {
-      transform: scale(1);
-      opacity: 0.5;
-    }
-    50% {
-      transform: scale(1.05);
-      opacity: 0.3;
-    }
-  }
-
-  /* Responsive Design */
-  @media (max-width: 1200px) {
-    header {
-      flex-direction: column;
-      text-align: center;
-      padding-top: 120px;
-    }
-
-    .hero-content {
-      width: 100%;
-      margin-bottom: 60px;
-    }
-
-    .hero-right-column {
-      width: 100%;
-    }
-
-    .image-container {
-      width: 300px;
-      height: 300px;
-    }
-
-    .hero-actions-right {
-      max-width: 300px;
-      margin: 0 auto;
-    }
-
-    .about-content {
-      grid-template-columns: 1fr;
-    }
-
-    .contact-container {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  @media (max-width: 768px) {
-    nav {
-      top: 15px;
-      right: 15px;
-      padding: 12px 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-      width: calc(100% - 30px);
-    }
-
-    nav button {
-      padding: 6px 12px;
-      font-size: 14px;
-    }
-
-    .hero-content h1 {
-      font-size: 2.8rem;
-    }
-
-    .typed-text {
-      font-size: 1.5rem;
-    }
-
-    .section-title {
-      font-size: 2.2rem;
-    }
-
-    .projects-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .certifications-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .floating-btn {
-      width: 50px;
-      height: 50px;
-      font-size: 1.2rem;
-    }
-
-    #dark-toggle {
-      bottom: 20px;
-      left: 20px;
-    }
-
-    #contact-btn {
-      bottom: 20px;
-      right: 20px;
-    }
-  }
-
-  /* Particle Background */
-  .particles {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    pointer-events: none;
-  }
+/* Particle Background */
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
 </style>
 </head>
 
@@ -1081,12 +1079,12 @@ body.dark .tech-stack-small .tech-tag {
       <span class="tech-tag"><i class="fab fa-js"></i> JavaScript</span>
       <span class="tech-tag"><i class="fab fa-react"></i> React</span>
       <span class="tech-tag"><i class="fab fa-node-js"></i> Node.js</span>
-      <span class="tech-tag"><i class="fab fa-express"></i> Express</span>
+      <span class="tech-tag"><i class="fas fa-server"></i> Express</span>
       <span class="tech-tag"><i class="fas fa-database"></i> MongoDB</span>
       <span class="tech-tag"><i class="fab fa-java"></i> Java</span>
-     <span class="tech-tag"><i class="fab fa-c"></i> C</span>
+      <span class="tech-tag"><i class="fas fa-c"></i> C</span>
       <span class="tech-tag"><i class="fas fa-chart-line"></i> Power BI</span>
-      <span class="tech-tag"><i class="fas fa-excel"></i> Microsoft Excel</span>
+      <span class="tech-tag"><i class="fas fa-file-excel"></i> Microsoft Excel</span>
     </div>
   </div>
 
@@ -1098,10 +1096,10 @@ body.dark .tech-stack-small .tech-tag {
     </div>
     
     <div class="hero-actions-right">
-      <a href="Formal resume.pdf" download="Formal_resume.pdf" class="btn btn-primary">
+      <a href="Formal_resume.pdf" download class="btn btn-primary">
         <i class="fas fa-download"></i> Download Resume
       </a>
-      <a href="#contact" class="btn btn-secondary" onclick="switchSection('contact')">
+      <a href="#contact" class="btn btn-secondary">
         <i class="fas fa-paper-plane"></i> Contact Me
       </a>
     </div>
@@ -1358,9 +1356,6 @@ body.dark .tech-stack-small .tech-tag {
     <div class="certification-card">
       <h4>Business English Certificate Preliminary Exam</h4>
       <p>Cambridge University</p>
-      <a href="#" class="cert-link">
-        <i class="fas fa-certificate"></i> Certificate
-      </a>
     </div>
   </div>
 </section>
@@ -1372,7 +1367,7 @@ body.dark .tech-stack-small .tech-tag {
   <div class="timeline">
     <!-- Internship 1: C-DAC Chennai -->
     <div class="timeline-item">
-      <h4>Software Development Intern | C-DAC Chennai</h4>
+      <h4>Fullstack Development Intern | C-DAC Chennai</h4>
       <p class="timeline-date">July 2025 – December 2025</p>
       
       <div class="project-details">
@@ -1408,16 +1403,6 @@ body.dark .tech-stack-small .tech-tag {
               <span class="tech-tag"><i class="fas fa-server"></i> Express.js</span>
               <span class="tech-tag"><i class="fab fa-docker"></i> Docker</span>
             </div>
-          </div>
-          
-          <div class="achievements">
-            <h6>Key Achievements:</h6>
-            <ul>
-              <li>Successfully reduced video processing time by 40% through GPU optimization</li>
-              <li>Implemented scalable architecture supporting 1000+ concurrent users</li>
-              <li>Enhanced security through multi-tier authentication and authorization protocols</li>
-              <li>Improved video search accuracy by 35% with advanced metadata tagging</li>
-            </ul>
           </div>
         </div>
       </div>
@@ -1462,16 +1447,6 @@ body.dark .tech-stack-small .tech-tag {
               <span class="tech-tag"><i class="fas fa-chart-bar"></i> Chart.js</span>
             </div>
           </div>
-          
-          <div class="achievements">
-            <h6>Key Achievements:</h6>
-            <ul>
-              <li>Reduced manual appointment scheduling errors by 90% through digital automation</li>
-              <li>Increased customer retention by 25% with integrated CRM features</li>
-              <li>Improved inventory management efficiency by 60% with automated tracking</li>
-              <li>Enhanced user experience with 99% positive feedback on interface design</li>
-            </ul>
-          </div>
         </div>
       </div>
     </div>
@@ -1514,17 +1489,6 @@ body.dark .tech-stack-small .tech-tag {
               <span class="tech-tag"><i class="fas fa-map"></i> Google Maps API</span>
               <span class="tech-tag"><i class="fas fa-credit-card"></i> Stripe API</span>
             </div>
-          </div>
-          
-          <div class="achievements">
-            <h6>Key Achievements:</h6>
-            <ul>
-              <li>Increased event registration efficiency by 75% through streamlined booking process</li>
-              <li>Reduced manual administrative work by 80% with automated management tools</li>
-              <li>Achieved 95% positive user feedback on platform usability</li>
-              <li>Improved event discovery rate by 40% through advanced search capabilities</li>
-              <li>Successfully processed 1000+ transactions with zero payment gateway failures</li>
-            </ul>
           </div>
         </div>
       </div>
@@ -1611,7 +1575,7 @@ body.dark .tech-stack-small .tech-tag {
 <div id="dark-toggle" class="floating-btn" onclick="toggleDarkMode()">
   <i class="fas fa-moon"></i>
 </div>
-<div id="contact-btn" class="floating-btn" onclick="switchSection('contact')">
+<div id="contact-btn" class="floating-btn">
   <i class="fas fa-paper-plane"></i>
 </div>
 
@@ -1671,11 +1635,13 @@ body.dark .tech-stack-small .tech-tag {
     }
   }
 
-  // Typing Animation - Simplified to just show "Full Stack Developer"
-  const typedTextElement = document.getElementById('typed-text');
-  
   // Set the text directly since we only want "Full Stack Developer"
-  typedTextElement.textContent = "Full Stack Developer";
+  document.addEventListener('DOMContentLoaded', () => {
+    const typedTextElement = document.querySelector('.typed-text');
+    if (typedTextElement) {
+      typedTextElement.textContent = "Full Stack Developer";
+    }
+  });
 
   // Section Navigation
   const sections = document.querySelectorAll('.section');
@@ -1700,7 +1666,10 @@ body.dark .tech-stack-small .tech-tag {
     });
     
     // Scroll to section
-    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    const targetSection = document.getElementById(id);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 
   // Stats Counter Animation
@@ -1757,8 +1726,29 @@ body.dark .tech-stack-small .tech-tag {
     
     // Set up nav button clicks
     navButtons.forEach(btn => {
-      btn.addEventListener('click', () => switchSection(btn.dataset.target));
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        switchSection(btn.dataset.target);
+      });
     });
+    
+    // Set up contact button
+    const contactBtn = document.getElementById('contact-btn');
+    if (contactBtn) {
+      contactBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        switchSection('contact');
+      });
+    }
+    
+    // Set up contact me button in hero section
+    const heroContactBtn = document.querySelector('.hero-actions-right .btn-secondary');
+    if (heroContactBtn) {
+      heroContactBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        switchSection('contact');
+      });
+    }
     
     // Check for hash in URL
     if (window.location.hash) {
@@ -1776,22 +1766,44 @@ body.dark .tech-stack-small .tech-tag {
       });
     }, { threshold: 0.5 });
     
-    observer.observe(document.getElementById('stats'));
+    const statsSection = document.getElementById('stats');
+    if (statsSection) {
+      observer.observe(statsSection);
+    }
     
     // Fix resume download issue
-    const resumeLink = document.querySelector('a[href*="Formal resume.pdf"]');
+    const resumeLink = document.querySelector('a[href*="Formal_resume.pdf"]');
     if (resumeLink) {
       // Add timestamp to prevent caching issues
-      resumeLink.href = 'Formal resume.pdf' + '?v=' + Date.now();
+      const timestamp = new Date().getTime();
+      resumeLink.href = 'Formal_resume.pdf' + '?v=' + timestamp;
+      
+      // Add event listener to handle download
+      resumeLink.addEventListener('click', function(e) {
+        // If the file doesn't exist, show an alert
+        fetch('Formal_resume.pdf')
+          .then(response => {
+            if (!response.ok) {
+              e.preventDefault();
+              alert('Resume file not found. Please ensure "Formal_resume.pdf" is in the same folder as this HTML file.');
+            }
+          })
+          .catch(() => {
+            e.preventDefault();
+            alert('Resume file not found. Please ensure "Formal_resume.pdf" is in the same folder as this HTML file.');
+          });
+      });
     }
   });
 
   // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
-      e.preventDefault();
       const targetId = this.getAttribute('href').substring(1);
-      if (targetId) switchSection(targetId);
+      if (targetId && targetId !== '') {
+        e.preventDefault();
+        switchSection(targetId);
+      }
     });
   });
 </script>
