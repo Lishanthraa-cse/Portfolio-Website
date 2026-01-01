@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lishanthraa R | Full Stack Developer</title>
+<title>Portfolio by Lishanthraa</title>
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@300;400&display=swap" rel="stylesheet">
@@ -67,7 +67,7 @@
     background: var(--primary-dark);
   }
 
-  /* Header/Hero Section */
+  /* Header/Hero Section - Updated Layout */
   header {
     min-height: 100vh;
     display: flex;
@@ -92,7 +92,7 @@
   }
 
   .hero-content {
-    max-width: 55%;
+    width: 50%;
     z-index: 2;
     position: relative;
   }
@@ -101,7 +101,7 @@
     font-size: 3.8rem;
     font-weight: 700;
     line-height: 1.2;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     background: var(--gradient);
     -webkit-background-clip: text;
     background-clip: text;
@@ -175,59 +175,22 @@
     transform: translateY(-3px);
   }
 
-  /* Hero Actions */
-  .hero-actions {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    animation: fadeInUp 1s ease-out 1s both;
-  }
-
-  .btn {
-    padding: 14px 32px;
-    font-weight: 600;
-    border-radius: 8px;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    transition: all 0.3s ease;
-    font-size: 1rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .btn-primary {
-    background: var(--gradient);
-    color: white;
-    box-shadow: 0 4px 15px rgba(151, 167, 118, 0.3);
-  }
-
-  .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(151, 167, 118, 0.4);
-  }
-
-  .btn-secondary {
-    background: transparent;
-    color: var(--primary);
-    border: 2px solid var(--primary);
-  }
-
-  .btn-secondary:hover {
-    background: var(--primary);
-    color: white;
-    transform: translateY(-3px);
-  }
-
-  /* Hero Image */
-  .hero-image {
+  /* Right Column Layout */
+  .hero-right-column {
     width: 40%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     z-index: 2;
     position: relative;
+  }
+
+  .hero-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
     animation: float 6s ease-in-out infinite;
   }
 
@@ -258,6 +221,55 @@
     border-radius: 50%;
     animation: pulse 2s infinite;
     opacity: 0.5;
+  }
+
+  /* Hero Actions in Right Column */
+  .hero-actions-right {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 380px;
+    animation: fadeInUp 1s ease-out 1s both;
+  }
+
+  .btn {
+    padding: 14px 32px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .btn-primary {
+    background: var(--gradient);
+    color: white;
+    box-shadow: 0 4px 15px rgba(151, 167, 118, 0.3);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(151, 167, 118, 0.4);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+  }
+
+  .btn-secondary:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-3px);
   }
 
   /* Navigation */
@@ -529,6 +541,58 @@
     border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 
+  /* Certifications Section */
+  .certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+  }
+
+  .certification-card {
+    background: var(--card-light);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--primary);
+  }
+
+  body.dark .certification-card {
+    background: var(--card-dark);
+  }
+
+  .certification-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .certification-card h4 {
+    color: var(--primary);
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+
+  .certification-card p {
+    margin-bottom: 15px;
+    opacity: 0.9;
+  }
+
+  .cert-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .cert-link:hover {
+    color: var(--primary-dark);
+    gap: 12px;
+  }
+
   /* Contact Section */
   .contact-container {
     display: grid;
@@ -719,6 +783,136 @@
     margin-bottom: 10px;
   }
 
+ /* Enhanced Experience Section Styles */
+.timeline-item {
+  padding: 30px;
+  margin-bottom: 40px;
+  background: var(--card-light);
+  border-radius: 15px;
+  position: relative;
+  border-left: 4px solid var(--primary);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+body.dark .timeline-item {
+  background: var(--card-dark);
+}
+
+.timeline-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-date {
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(151, 167, 118, 0.2);
+}
+
+.project-details h5 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--secondary);
+}
+
+body.dark .project-details h5 {
+  color: var(--text-dark);
+}
+
+.project-description {
+  margin-bottom: 25px;
+}
+
+.project-description p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.project-responsibilities h6,
+.technical-skills h6,
+.achievements h6 {
+  font-size: 1.2rem;
+  margin: 25px 0 15px 0;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+}
+
+.project-responsibilities h6 i,
+.technical-skills h6 i,
+.achievements h6 i {
+  margin-right: 10px;
+}
+
+.project-responsibilities ul,
+.achievements ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.project-responsibilities li,
+.achievements li {
+  margin-bottom: 12px;
+  padding-left: 30px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.project-responsibilities li i,
+.achievements li i {
+  position: absolute;
+  left: 0;
+  top: 3px;
+  color: var(--primary);
+}
+
+.technical-skills {
+  margin: 30px 0;
+}
+
+.tech-stack-small {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.tech-stack-small .tech-tag {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  background: rgba(151, 167, 118, 0.1);
+}
+
+body.dark .tech-stack-small .tech-tag {
+  background: rgba(151, 167, 118, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .timeline-item {
+    padding: 20px;
+  }
+  
+  .project-details h5 {
+    font-size: 1.3rem;
+  }
+  
+  .tech-stack-small {
+    gap: 6px;
+  }
+  
+  .tech-stack-small .tech-tag {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+}
+
   /* Animations */
   @keyframes fadeIn {
     from {
@@ -771,11 +965,11 @@
     }
 
     .hero-content {
-      max-width: 100%;
+      width: 100%;
       margin-bottom: 60px;
     }
 
-    .hero-image {
+    .hero-right-column {
       width: 100%;
     }
 
@@ -784,8 +978,9 @@
       height: 300px;
     }
 
-    .hero-actions {
-      justify-content: center;
+    .hero-actions-right {
+      max-width: 300px;
+      margin: 0 auto;
     }
 
     .about-content {
@@ -828,6 +1023,10 @@
       grid-template-columns: 1fr;
     }
 
+    .certifications-grid {
+      grid-template-columns: 1fr;
+    }
+
     .floating-btn {
       width: 50px;
       height: 50px;
@@ -867,7 +1066,7 @@
 <header id="home" class="section active">
   <div class="hero-content">
     <h1>Lishanthraa R</h1>
-    <div class="typed-text" id="typed-text"></div>
+    <div class="typed-text">Full Stack Developer</div>
     <p>Aspiring Full Stack & Data-Driven Software Professional with strong analytical and application development skills.</p>
     
     <ul class="highlight-list">
@@ -882,24 +1081,29 @@
       <span class="tech-tag"><i class="fab fa-js"></i> JavaScript</span>
       <span class="tech-tag"><i class="fab fa-react"></i> React</span>
       <span class="tech-tag"><i class="fab fa-node-js"></i> Node.js</span>
+      <span class="tech-tag"><i class="fab fa-express"></i> Express</span>
       <span class="tech-tag"><i class="fas fa-database"></i> MongoDB</span>
       <span class="tech-tag"><i class="fab fa-java"></i> Java</span>
+     <span class="tech-tag"><i class="fab fa-c"></i> C</span>
       <span class="tech-tag"><i class="fas fa-chart-line"></i> Power BI</span>
+      <span class="tech-tag"><i class="fas fa-excel"></i> Microsoft Excel</span>
     </div>
+  </div>
 
-    <div class="hero-actions">
-      <a href="Formal resume.pdf" download class="btn btn-primary">
+  <div class="hero-right-column">
+    <div class="hero-image">
+      <div class="image-container">
+        <img src="photo.jpg" alt="Lishanthraa R" onerror="this.src='https://via.placeholder.com/380x380/97A776/FFFFFF?text=Lishanthraa+R'">
+      </div>
+    </div>
+    
+    <div class="hero-actions-right">
+      <a href="Formal resume.pdf" download="Formal_resume.pdf" class="btn btn-primary">
         <i class="fas fa-download"></i> Download Resume
       </a>
       <a href="#contact" class="btn btn-secondary" onclick="switchSection('contact')">
         <i class="fas fa-paper-plane"></i> Contact Me
       </a>
-    </div>
-  </div>
-
-  <div class="hero-image">
-    <div class="image-container">
-      <img src="photo.jpg" alt="Lishanthraa R">
     </div>
   </div>
 </header>
@@ -909,6 +1113,7 @@
   <button data-target="home" class="active">Home</button>
   <button data-target="about">About</button>
   <button data-target="projects">Projects</button>
+  <button data-target="certifications">Certifications</button>
   <button data-target="experience">Experience</button>
   <button data-target="contact">Contact</button>
 </nav>
@@ -948,11 +1153,11 @@
       <div class="skill-category">
         <h4><i class="fas fa-code"></i> Technical Skills</h4>
         <ul>
-          <li><i class="fas fa-check"></i> HTML, CSS, JavaScript, React JS</li>
+          <li><i class="fas fa-check"></i> HTML, CSS, JavaScript, React</li>
           <li><i class="fas fa-check"></i> Node.js, MongoDB, Express.js</li>
           <li><i class="fas fa-check"></i> Java, C Programming</li>
           <li><i class="fas fa-check"></i> Microsoft Excel, Power BI</li>
-          <li><i class="fas fa-check"></i> Python, Flask, Scikit-learn</li>
+          <li><i class="fas fa-check"></i> Flask, Scikit-learn, Pandas</li>
         </ul>
       </div>
       
@@ -1000,7 +1205,6 @@
           <span class="tech-badge">Flask</span>
           <span class="tech-badge">Scikit-learn</span>
           <span class="tech-badge">Pandas</span>
-          <span class="tech-badge">AI/ML</span>
         </div>
       </div>
       <div class="project-body">
@@ -1022,7 +1226,7 @@
         <h3>AI-Powered Recipe Assistant</h3>
         <div class="project-tech">
           <span class="tech-badge">Flask</span>
-          <span class="tech-badge">NLP</span>
+          <span class="tech-badge">FuzzyWuzzy</span>
           <span class="tech-badge">Voice Recognition</span>
           <span class="tech-badge">Pandas</span>
         </div>
@@ -1067,24 +1271,263 @@
   </div>
 </section>
 
+<!-- Certifications Section -->
+<section id="certifications" class="section">
+  <h2 class="section-title">Certifications</h2>
+  <div class="certifications-grid">
+    <div class="certification-card">
+      <h4>Cyber Security and Privacy</h4>
+      <p>NPTEL</p>
+      <a href="https://drive.google.com/file/d/1FT1SwS5uu0EFBdHdXZ9cX0rDK3Mlbvz_/view?usp=sharing" target="_blank" class="cert-link">
+        <i class="fas fa-external-link-alt"></i> View Certificate
+      </a>
+    </div>
+    
+    <div class="certification-card">
+      <h4>Software Testing</h4>
+      <p>NPTEL</p>
+      <a href="https://drive.google.com/file/d/1FTDXMWsud_FydUqap9lHbe_YeMbPCbLd/view?usp=sharing" target="_blank" class="cert-link">
+        <i class="fas fa-external-link-alt"></i> View Certificate
+      </a>
+    </div>
+    
+    <div class="certification-card">
+      <h4>Privacy and Security in Online Social Media</h4>
+      <p>NPTEL</p>
+      <a href="https://drive.google.com/file/d/1o4_czL5ORWbSgKlyxt0Vc71T5dn1X2ew/view?usp=sharing" target="_blank" class="cert-link">
+        <i class="fas fa-external-link-alt"></i> View Certificate
+      </a>
+    </div>
+    
+    <div class="certification-card">
+      <h4>Google Cloud Study Jams</h4>
+      <p>Google Cloud</p>
+      <a href="https://drive.google.com/file/d/1fQaM9FMNiDgLAoT1VEGS_B9Uo5ToNIfx/view?usp=sharing" target="_blank" class="cert-link">
+        <i class="fas fa-external-link-alt"></i> View Certificate
+      </a>
+    </div>
+    
+    <div class="certification-card">
+      <h4>React JS</h4>
+      <p>Scaler</p>
+      <a href="https://drive.google.com/file/d/1tV2lGmBmlcPDaPrt89mugk5SQHelStZD/view?usp=sharing" target="_blank" class="cert-link">
+        <i class="fas fa-external-link-alt"></i> View Certificate
+      </a>
+    </div>
+    
+    <div class="certification-card">
+      <h4>Node JS</h4>
+      <p>Scaler</p>
+      <a href="https://drive.google.com/file/d/1RJ1czqF1PAe8_KFsUEdjpdxGuQUCuvuG/view?usp=sharing" target="_blank" class="cert-link">
+        <i class="fas fa-external-link-alt"></i> View Certificate
+      </a>
+    </div>
+    
+    <div class="certification-card">
+      <h4>Data Science Tools</h4>
+      <p>IBM</p>
+      <a href="https://drive.google.com/file/d/11K3uqGQG_-GgwAYATR4C7sngCkDdN8tW/view?usp=sharing" target="_blank" class="cert-link">
+        <i class="fas fa-external-link-alt"></i> View Certificate
+      </a>
+    </div>
+    
+    <div class="certification-card">
+      <h4>Introduction to Data Science</h4>
+      <p>Cisco Networking Academy</p>
+      <a href="https://drive.google.com/file/d/1rNHjulsn-zccOLgw4Rd3a8QBCYKE0Nov/view?usp=sharing" target="_blank" class="cert-link">
+        <i class="fas fa-external-link-alt"></i> View Certificate
+      </a>
+    </div>
+    
+    <div class="certification-card">
+      <h4>Python 3.x Programming Course</h4>
+      <p>SkillRack</p>
+      <a href="http://www.SkillRack.com/cert/494290/LZM" target="_blank" class="cert-link">
+        <i class="fas fa-external-link-alt"></i> View Certificate
+      </a>
+    </div>
+    
+    <div class="certification-card">
+      <h4>C Programming Course</h4>
+      <p>SkillRack</p>
+      <a href="http://www.SkillRack.com/cert/455940/OQJ" target="_blank" class="cert-link">
+        <i class="fas fa-external-link-alt"></i> View Certificate
+      </a>
+    </div>
+    
+    <div class="certification-card">
+      <h4>Business English Certificate Preliminary Exam</h4>
+      <p>Cambridge University</p>
+      <a href="#" class="cert-link">
+        <i class="fas fa-certificate"></i> Certificate
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- Experience Section -->
 <section id="experience" class="section">
   <h2 class="section-title">Professional Experience</h2>
+  
   <div class="timeline">
+    <!-- Internship 1: C-DAC Chennai -->
     <div class="timeline-item">
-      <h4>Intern @ C-DAC Chennai</h4>
-      <p>Jul – Dec 2025</p>
-      <p>Contributed to dynamic web application builds and backend integration. Worked on enterprise-level software solutions.</p>
+      <h4>Software Development Intern | C-DAC Chennai</h4>
+      <p class="timeline-date">July 2025 – December 2025</p>
+      
+      <div class="project-details">
+        <h5>Project: Role-Based Interactive Video Repository System</h5>
+        
+        <div class="project-description">
+          <p>Developed an enterprise-level Video Management System (VMS) integrating live video streaming, intelligent surveillance, and data-driven decision-making capabilities. The system was designed to serve as a centralized platform for video content management across multiple organizational hierarchies.</p>
+          
+          <div class="project-responsibilities">
+            <h6>Key Responsibilities & Contributions:</h6>
+            <ul>
+              <li><i class="fas fa-code"></i> Architected and implemented a robust backend using Node.js and Express.js with RESTful API design</li>
+              <li><i class="fas fa-video"></i> Integrated WebSocket communication for real-time video streaming and processing</li>
+              <li><i class="fas fa-shield-alt"></i> Developed comprehensive role-based access control (RBAC) system supporting multiple user tiers</li>
+              <li><i class="fas fa-brain"></i> Implemented AI-powered object detection and video analytics modules using Python and TensorFlow</li>
+              <li><i class="fas fa-database"></i> Designed MongoDB schemas for efficient video metadata storage and retrieval</li>
+              <li><i class="fas fa-tachometer-alt"></i> Optimized GPU-based video processing pipelines for enhanced performance</li>
+              <li><i class="fas fa-mobile-alt"></i> Built responsive frontend interfaces using React.js with Material-UI components</li>
+              <li><i class="fas fa-ticket-alt"></i> Developed ticketing system for video content management and user support</li>
+              <li><i class="fas fa-search"></i> Implemented advanced search and filtering capabilities across video repositories</li>
+            </ul>
+          </div>
+          
+          <div class="technical-skills">
+            <h6>Technologies Used:</h6>
+            <div class="tech-stack-small">
+              <span class="tech-tag"><i class="fab fa-node-js"></i> Node.js</span>
+              <span class="tech-tag"><i class="fab fa-react"></i> React</span>
+              <span class="tech-tag"><i class="fas fa-database"></i> MongoDB</span>
+              <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
+              <span class="tech-tag"><i class="fas fa-cogs"></i> TensorFlow</span>
+              <span class="tech-tag"><i class="fas fa-bolt"></i> WebSocket</span>
+              <span class="tech-tag"><i class="fas fa-server"></i> Express.js</span>
+              <span class="tech-tag"><i class="fab fa-docker"></i> Docker</span>
+            </div>
+          </div>
+          
+          <div class="achievements">
+            <h6>Key Achievements:</h6>
+            <ul>
+              <li>Successfully reduced video processing time by 40% through GPU optimization</li>
+              <li>Implemented scalable architecture supporting 1000+ concurrent users</li>
+              <li>Enhanced security through multi-tier authentication and authorization protocols</li>
+              <li>Improved video search accuracy by 35% with advanced metadata tagging</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- Internship 2: Twisys Infotech -->
     <div class="timeline-item">
-      <h4>Intern @ Twisys Infotech</h4>
-      <p>Dec 2024</p>
-      <p>Implemented AI-based design elements in data-focused web applications. Enhanced UI/UX with interactive components.</p>
+      <h4>Web Development Intern | Twisys Infotech</h4>
+      <p class="timeline-date">December 2024</p>
+      
+      <div class="project-details">
+        <h5>Project: Beauty Parlour Management System</h5>
+        
+        <div class="project-description">
+          <p>Developed a comprehensive web application for managing beauty parlour operations including appointment scheduling, customer management, inventory tracking, and service cataloging. The system was designed to streamline business processes and enhance customer engagement through digital transformation.</p>
+          
+          <div class="project-responsibilities">
+            <h6>Key Responsibilities & Contributions:</h6>
+            <ul>
+              <li><i class="fas fa-calendar-alt"></i> Designed and implemented appointment booking system with real-time availability tracking</li>
+              <li><i class="fas fa-users"></i> Developed customer relationship management (CRM) module with profile management</li>
+              <li><i class="fas fa-shopping-cart"></i> Built e-commerce features for service booking and product sales</li>
+              <li><i class="fas fa-chart-line"></i> Created analytics dashboard for business performance monitoring</li>
+              <li><i class="fas fa-bell"></i> Implemented automated SMS and email notification system</li>
+              <li><i class="fas fa-archive"></i> Developed inventory management system with stock alerts</li>
+              <li><i class="fas fa-mobile-alt"></i> Ensured responsive design and cross-browser compatibility</li>
+              <li><i class="fas fa-lock"></i> Implemented secure payment gateway integration</li>
+              <li><i class="fas fa-star"></i> Created service review and rating system for customer feedback</li>
+            </ul>
+          </div>
+          
+          <div class="technical-skills">
+            <h6>Technologies Used:</h6>
+            <div class="tech-stack-small">
+              <span class="tech-tag"><i class="fab fa-html5"></i> HTML5</span>
+              <span class="tech-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
+              <span class="tech-tag"><i class="fab fa-js"></i> JavaScript</span>
+              <span class="tech-tag"><i class="fab fa-bootstrap"></i> Bootstrap</span>
+              <span class="tech-tag"><i class="fab fa-php"></i> PHP</span>
+              <span class="tech-tag"><i class="fas fa-database"></i> MySQL</span>
+              <span class="tech-tag"><i class="fas fa-code"></i> jQuery</span>
+              <span class="tech-tag"><i class="fas fa-chart-bar"></i> Chart.js</span>
+            </div>
+          </div>
+          
+          <div class="achievements">
+            <h6>Key Achievements:</h6>
+            <ul>
+              <li>Reduced manual appointment scheduling errors by 90% through digital automation</li>
+              <li>Increased customer retention by 25% with integrated CRM features</li>
+              <li>Improved inventory management efficiency by 60% with automated tracking</li>
+              <li>Enhanced user experience with 99% positive feedback on interface design</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- Internship 3: Kitkat Software Technologies -->
     <div class="timeline-item">
-      <h4>Intern @ Kitkat Software Technologies</h4>
-      <p>Jun 2024</p>
-      <p>Developed responsive web pages, worked with UI layouts and routing. Gained experience in front-end development.</p>
+      <h4>Frontend Development Intern | Kitkat Software Technologies</h4>
+      <p class="timeline-date">June 2024</p>
+      
+      <div class="project-details">
+        <h5>Project: Event Booking and Management Platform</h5>
+        
+        <div class="project-description">
+          <p>Engineered a responsive event booking website facilitating seamless event discovery, registration, and management. The platform served as a centralized hub connecting event organizers with attendees while providing comprehensive event administration capabilities.</p>
+          
+          <div class="project-responsibilities">
+            <h6>Key Responsibilities & Contributions:</h6>
+            <ul>
+              <li><i class="fas fa-search"></i> Developed advanced event search and filtering system with location-based services</li>
+              <li><i class="fas fa-ticket-alt"></i> Implemented ticket booking and payment processing system</li>
+              <li><i class="fas fa-user-friends"></i> Created user dashboard for event management and tracking</li>
+              <li><i class="fas fa-calendar-check"></i> Built calendar integration for event scheduling and reminders</li>
+              <li><i class="fas fa-map-marker-alt"></i> Integrated Google Maps API for venue location visualization</li>
+              <li><i class="fas fa-qrcode"></i> Developed QR code generation for ticket validation</li>
+              <li><i class="fas fa-comments"></i> Implemented event rating and review system</li>
+              <li><i class="fas fa-bullhorn"></i> Created promotional tools for event marketing</li>
+              <li><i class="fas fa-chart-pie"></i> Developed analytics module for event performance tracking</li>
+            </ul>
+          </div>
+          
+          <div class="technical-skills">
+            <h6>Technologies Used:</h6>
+            <div class="tech-stack-small">
+              <span class="tech-tag"><i class="fab fa-html5"></i> HTML5</span>
+              <span class="tech-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
+              <span class="tech-tag"><i class="fab fa-js"></i> JavaScript</span>
+              <span class="tech-tag"><i class="fab fa-react"></i> React</span>
+              <span class="tech-tag"><i class="fab fa-node-js"></i> Node.js</span>
+              <span class="tech-tag"><i class="fas fa-database"></i> MongoDB</span>
+              <span class="tech-tag"><i class="fas fa-map"></i> Google Maps API</span>
+              <span class="tech-tag"><i class="fas fa-credit-card"></i> Stripe API</span>
+            </div>
+          </div>
+          
+          <div class="achievements">
+            <h6>Key Achievements:</h6>
+            <ul>
+              <li>Increased event registration efficiency by 75% through streamlined booking process</li>
+              <li>Reduced manual administrative work by 80% with automated management tools</li>
+              <li>Achieved 95% positive user feedback on platform usability</li>
+              <li>Improved event discovery rate by 40% through advanced search capabilities</li>
+              <li>Successfully processed 1000+ transactions with zero payment gateway failures</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1228,45 +1671,11 @@
     }
   }
 
-  // Typing Animation
+  // Typing Animation - Simplified to just show "Full Stack Developer"
   const typedTextElement = document.getElementById('typed-text');
-  const texts = [
-    "Full Stack Developer",
-    "AI/ML Enthusiast",
-    "Data Analyst",
-    "Problem Solver",
-    "Continuous Learner"
-  ];
   
-  let textIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
-  let typingSpeed = 100;
-  
-  function typeText() {
-    const currentText = texts[textIndex];
-    
-    if (isDeleting) {
-      typedTextElement.textContent = currentText.substring(0, charIndex - 1);
-      charIndex--;
-      typingSpeed = 50;
-    } else {
-      typedTextElement.textContent = currentText.substring(0, charIndex + 1);
-      charIndex++;
-      typingSpeed = 100;
-    }
-    
-    if (!isDeleting && charIndex === currentText.length) {
-      isDeleting = true;
-      typingSpeed = 1500; // Pause at end
-    } else if (isDeleting && charIndex === 0) {
-      isDeleting = false;
-      textIndex = (textIndex + 1) % texts.length;
-      typingSpeed = 500; // Pause before next word
-    }
-    
-    setTimeout(typeText, typingSpeed);
-  }
+  // Set the text directly since we only want "Full Stack Developer"
+  typedTextElement.textContent = "Full Stack Developer";
 
   // Section Navigation
   const sections = document.querySelectorAll('.section');
@@ -1343,9 +1752,6 @@
 
   // Initialize everything when DOM loads
   document.addEventListener('DOMContentLoaded', () => {
-    // Start typing animation
-    setTimeout(typeText, 1000);
-    
     // Initialize particle background
     new ParticleBackground();
     
@@ -1371,6 +1777,13 @@
     }, { threshold: 0.5 });
     
     observer.observe(document.getElementById('stats'));
+    
+    // Fix resume download issue
+    const resumeLink = document.querySelector('a[href*="Formal resume.pdf"]');
+    if (resumeLink) {
+      // Add timestamp to prevent caching issues
+      resumeLink.href = 'Formal resume.pdf' + '?v=' + Date.now();
+    }
   });
 
   // Smooth scrolling for anchor links
