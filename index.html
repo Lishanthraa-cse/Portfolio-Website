@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio by Lishanthraa</title>
+<title>Lishanthraa R | Full Stack Developer Portfolio</title>
+<meta name="description" content="Portfolio of Lishanthraa R — Full Stack Developer specializing in the MERN stack, REST APIs, and AI-integrated web applications.">
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@300;400&display=swap" rel="stylesheet">
@@ -67,13 +68,33 @@
     background: var(--primary-dark);
   }
 
-  /* Header/Hero Section - Updated Layout */
+  /* Open to Work Banner */
+  .status-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--gradient);
+    color: white;
+    text-align: center;
+    padding: 8px 10px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    z-index: 1001;
+  }
+
+  .status-banner i {
+    margin-right: 6px;
+  }
+
+  /* Header/Hero Section */
   header {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 10%;
+    padding: 40px 10% 0;
     position: relative;
     overflow: hidden;
   }
@@ -95,6 +116,16 @@
     width: 50%;
     z-index: 2;
     position: relative;
+  }
+
+  .hero-content .eyebrow {
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 12px;
+    animation: fadeInUp 1s ease-out;
   }
 
   .hero-content h1 {
@@ -119,7 +150,7 @@
   }
 
   .hero-content p {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     margin-bottom: 2rem;
     opacity: 0.9;
     animation: fadeInUp 1s ease-out 0.4s both;
@@ -135,7 +166,7 @@
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
 
   .highlight-list li i {
@@ -247,6 +278,8 @@
     position: relative;
     overflow: hidden;
     text-align: center;
+    cursor: pointer;
+    border: none;
   }
 
   .btn-primary {
@@ -275,7 +308,7 @@
   /* Navigation */
   nav {
     position: fixed;
-    top: 30px;
+    top: 46px;
     right: 30px;
     background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(10px);
@@ -293,7 +326,7 @@
   }
 
   nav.scrolled {
-    top: 20px;
+    top: 36px;
     padding: 12px 20px;
   }
 
@@ -324,18 +357,6 @@
     color: white;
   }
 
-  nav button.active::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 20px;
-    height: 3px;
-    background: white;
-    border-radius: 2px;
-  }
-
   /* Sections */
   .section {
     padding: 100px 10%;
@@ -355,7 +376,7 @@
   .section-title {
     font-size: 2.8rem;
     font-weight: 700;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     position: relative;
     display: inline-block;
   }
@@ -369,6 +390,13 @@
     height: 4px;
     background: var(--gradient);
     border-radius: 2px;
+  }
+
+  .section-subtitle {
+    font-size: 1.05rem;
+    opacity: 0.75;
+    margin-bottom: 3rem;
+    max-width: 700px;
   }
 
   /* About Section */
@@ -387,7 +415,7 @@
 
   .skills-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 25px;
     margin-top: 40px;
   }
@@ -411,7 +439,7 @@
   .skill-category h4 {
     color: var(--primary);
     margin-bottom: 15px;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .skill-category ul {
@@ -422,6 +450,7 @@
     margin-bottom: 10px;
     display: flex;
     align-items: center;
+    font-size: 0.95rem;
   }
 
   .skill-category li i {
@@ -454,6 +483,15 @@
   .timeline-item h4 {
     color: var(--primary);
     margin-bottom: 10px;
+  }
+
+  .timeline-item .edu-meta {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 0.95rem;
+    opacity: 0.85;
   }
 
   /* Projects Section */
@@ -531,6 +569,28 @@
     margin-top: 5px;
   }
 
+  .impact-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .impact-badge {
+    background: rgba(151, 167, 118, 0.12);
+    color: var(--primary-dark);
+    border: 1px solid rgba(151, 167, 118, 0.3);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  body.dark .impact-badge {
+    background: rgba(151, 167, 118, 0.18);
+    color: var(--primary-light);
+  }
+
   .project-links {
     padding: 20px 25px;
     display: flex;
@@ -570,8 +630,19 @@
 
   .certification-card h4 {
     color: var(--primary);
-    margin-bottom: 10px;
-    font-size: 1.2rem;
+    margin-bottom: 6px;
+    font-size: 1.15rem;
+  }
+
+  .certification-card .cert-issuer {
+    font-weight: 500;
+  }
+
+  .certification-card .cert-date {
+    display: block;
+    font-size: 0.85rem;
+    opacity: 0.65;
+    margin-bottom: 15px;
   }
 
   .certification-card p {
@@ -634,6 +705,7 @@
     justify-content: center;
     color: white;
     font-size: 1.2rem;
+    flex-shrink: 0;
   }
 
   .contact-form {
@@ -784,274 +856,190 @@
     margin-bottom: 10px;
   }
 
- /* Enhanced Experience Section Styles */
-.timeline-item {
-  padding: 30px;
-  margin-bottom: 40px;
-  background: var(--card-light);
-  border-radius: 15px;
-  position: relative;
-  border-left: 4px solid var(--primary);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-}
-
-body.dark .timeline-item {
-  background: var(--card-dark);
-}
-
-.timeline-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-}
-
-.timeline-date {
-  color: var(--primary);
-  font-weight: 600;
-  margin-bottom: 20px;
-  font-size: 1.1rem;
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(151, 167, 118, 0.2);
-}
-
-.project-details h5 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: var(--secondary);
-}
-
-body.dark .project-details h5 {
-  color: var(--text-dark);
-}
-
-.project-description {
-  margin-bottom: 25px;
-}
-
-.project-description p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 20px;
-  opacity: 0.9;
-}
-
-.project-responsibilities h6,
-.technical-skills h6,
-.achievements h6 {
-  font-size: 1.2rem;
-  margin: 25px 0 15px 0;
-  color: var(--primary);
-  display: flex;
-  align-items: center;
-}
-
-.project-responsibilities h6 i,
-.technical-skills h6 i,
-.achievements h6 i {
-  margin-right: 10px;
-}
-
-.project-responsibilities ul,
-.achievements ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.project-responsibilities li,
-.achievements li {
-  margin-bottom: 12px;
-  padding-left: 30px;
-  position: relative;
-  line-height: 1.6;
-}
-
-.project-responsibilities li i,
-.achievements li i {
-  position: absolute;
-  left: 0;
-  top: 3px;
-  color: var(--primary);
-}
-
-.technical-skills {
-  margin: 30px 0;
-}
-
-.tech-stack-small {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 10px;
-}
-
-.tech-stack-small .tech-tag {
-  padding: 6px 12px;
-  font-size: 0.85rem;
-  background: rgba(151, 167, 118, 0.1);
-}
-
-body.dark .tech-stack-small .tech-tag {
-  background: rgba(151, 167, 118, 0.2);
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.5;
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 0.3;
-  }
-}
-
-/* Responsive Design */
-@media (max-width: 1200px) {
-  header {
-    flex-direction: column;
-    text-align: center;
-    padding-top: 120px;
-  }
-
-  .hero-content {
-    width: 100%;
-    margin-bottom: 60px;
-  }
-
-  .hero-right-column {
-    width: 100%;
-  }
-
-  .image-container {
-    width: 300px;
-    height: 300px;
-  }
-
-  .hero-actions-right {
-    max-width: 300px;
-    margin: 0 auto;
-  }
-
-  .about-content {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-container {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  nav {
-    top: 15px;
-    right: 15px;
-    padding: 12px 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: calc(100% - 30px);
-  }
-
-  nav button {
-    padding: 6px 12px;
-    font-size: 14px;
-  }
-
-  .hero-content h1 {
-    font-size: 2.8rem;
-  }
-
-  .typed-text {
-    font-size: 1.5rem;
-  }
-
-  .section-title {
-    font-size: 2.2rem;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .certifications-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .floating-btn {
-    width: 50px;
-    height: 50px;
-    font-size: 1.2rem;
-  }
-
-  #dark-toggle {
-    bottom: 20px;
-    left: 20px;
-  }
-
-  #contact-btn {
-    bottom: 20px;
-    right: 20px;
-  }
-  
+  /* Enhanced Experience Section Styles */
   .timeline-item {
-    padding: 20px;
+    padding: 30px;
+    margin-bottom: 40px;
+    background: var(--card-light);
+    border-radius: 15px;
+    position: relative;
+    border-left: 4px solid var(--primary);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
   }
-  
-  .project-details h5 {
-    font-size: 1.3rem;
-  }
-  
-  .tech-stack-small {
-    gap: 6px;
-  }
-  
-  .tech-stack-small .tech-tag {
-    padding: 5px 10px;
-    font-size: 0.8rem;
-  }
-}
 
-/* Particle Background */
-.particles {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
-}
+  body.dark .timeline-item {
+    background: var(--card-dark);
+  }
+
+  .timeline-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .timeline-date {
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(151, 167, 118, 0.2);
+  }
+
+  .project-details h5 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--secondary);
+  }
+
+  body.dark .project-details h5 {
+    color: var(--text-dark);
+  }
+
+  .project-description {
+    margin-bottom: 25px;
+  }
+
+  .project-description p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    opacity: 0.9;
+  }
+
+  .project-responsibilities h6,
+  .technical-skills h6,
+  .achievements h6 {
+    font-size: 1.2rem;
+    margin: 25px 0 15px 0;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+  }
+
+  .project-responsibilities h6 i,
+  .technical-skills h6 i,
+  .achievements h6 i {
+    margin-right: 10px;
+  }
+
+  .project-responsibilities ul,
+  .achievements ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .project-responsibilities li,
+  .achievements li {
+    margin-bottom: 12px;
+    padding-left: 30px;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .project-responsibilities li i,
+  .achievements li i {
+    position: absolute;
+    left: 0;
+    top: 3px;
+    color: var(--primary);
+  }
+
+  .technical-skills {
+    margin: 30px 0;
+  }
+
+  .tech-stack-small {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .tech-stack-small .tech-tag {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    background: rgba(151, 167, 118, 0.1);
+  }
+
+  body.dark .tech-stack-small .tech-tag {
+    background: rgba(151, 167, 118, 0.2);
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.05); opacity: 0.3; }
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1200px) {
+    header {
+      flex-direction: column;
+      text-align: center;
+      padding-top: 140px;
+    }
+
+    .hero-content { width: 100%; margin-bottom: 60px; }
+    .hero-right-column { width: 100%; }
+    .image-container { width: 300px; height: 300px; }
+    .hero-actions-right { max-width: 300px; margin: 0 auto; }
+    .about-content { grid-template-columns: 1fr; }
+    .contact-container { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 768px) {
+    .status-banner { font-size: 0.75rem; padding: 6px; }
+
+    nav {
+      top: 40px;
+      right: 15px;
+      padding: 12px 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: calc(100% - 30px);
+    }
+
+    nav button { padding: 6px 12px; font-size: 14px; }
+    .hero-content h1 { font-size: 2.8rem; }
+    .typed-text { font-size: 1.5rem; }
+    .section-title { font-size: 2.2rem; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .certifications-grid { grid-template-columns: 1fr; }
+    .floating-btn { width: 50px; height: 50px; font-size: 1.2rem; }
+    #dark-toggle { bottom: 20px; left: 20px; }
+    #contact-btn { bottom: 20px; right: 20px; }
+    .timeline-item { padding: 20px; }
+    .project-details h5 { font-size: 1.3rem; }
+    .tech-stack-small { gap: 6px; }
+    .tech-stack-small .tech-tag { padding: 5px 10px; font-size: 0.8rem; }
+  }
+
+  /* Particle Background */
+  .particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+  }
 </style>
 </head>
 
@@ -1060,31 +1048,38 @@ body.dark .tech-stack-small .tech-tag {
 <!-- Particle Background -->
 <canvas class="particles"></canvas>
 
+<!-- Open to Work Banner -->
+<div class="status-banner">
+  <i class="fas fa-circle" style="font-size:0.5rem; vertical-align:middle;"></i>
+  Open to Full-Time Software Engineering Roles &amp; Internships — Graduating 2027
+</div>
+
 <!-- ============== HERO / HOME SECTION ============== -->
 <header id="home" class="section active">
   <div class="hero-content">
+    <div class="eyebrow">Full Stack Developer</div>
     <h1>Lishanthraa R</h1>
-    <div class="typed-text">Full Stack Developer</div>
-    <p>Aspiring Full Stack & Data-Driven Software Professional with strong analytical and application development skills.</p>
-    
+    <div class="typed-text">MERN Stack &amp; AI-Integrated Applications</div>
+    <p>Integrated M.Tech Computer Science and Engineering student (graduating 2027) with hands-on industry experience across three internships and a strong foundation in Data Structures &amp; Algorithms, DBMS, and Object-Oriented Programming. I build production-ready web applications and REST APIs using modern engineering practices.</p>
+
     <ul class="highlight-list">
-      <li><i class="fas fa-code"></i> Building responsive websites & AI-powered applications</li>
-      <li><i class="fas fa-rocket"></i> Focused on backend performance & clean development practices</li>
-      <li><i class="fas fa-brain"></i> Strong analytical & problem-solving mindset</li>
+      <li><i class="fas fa-code-branch"></i> Shipped a real-time video surveillance platform with AI object detection at C-DAC, Chennai</li>
+      <li><i class="fas fa-server"></i> Skilled in designing scalable REST APIs, database schemas, and role-based access systems</li>
+      <li><i class="fas fa-brain"></i> Comfortable working across the stack — from React interfaces to ML-powered backends</li>
     </ul>
 
     <div class="tech-stack">
-      <span class="tech-tag"><i class="fab fa-html5"></i> HTML5</span>
-      <span class="tech-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
-      <span class="tech-tag"><i class="fab fa-js"></i> JavaScript</span>
-      <span class="tech-tag"><i class="fab fa-react"></i> React</span>
+      <span class="tech-tag"><i class="fab fa-react"></i> React.js</span>
       <span class="tech-tag"><i class="fab fa-node-js"></i> Node.js</span>
-      <span class="tech-tag"><i class="fas fa-server"></i> Express</span>
+      <span class="tech-tag"><i class="fas fa-server"></i> Express.js</span>
+      <span class="tech-tag"><i class="fas fa-bolt"></i> FastAPI</span>
       <span class="tech-tag"><i class="fas fa-database"></i> MongoDB</span>
+      <span class="tech-tag"><i class="fas fa-database"></i> PostgreSQL</span>
       <span class="tech-tag"><i class="fab fa-java"></i> Java</span>
-      <span class="tech-tag"><i class="fas fa-c"></i> C</span>
+      <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
+      <span class="tech-tag"><i class="fab fa-js"></i> JavaScript</span>
+      <span class="tech-tag"><i class="fab fa-docker"></i> Docker</span>
       <span class="tech-tag"><i class="fas fa-chart-line"></i> Power BI</span>
-      <span class="tech-tag"><i class="fas fa-file-excel"></i> Microsoft Excel</span>
     </div>
   </div>
 
@@ -1094,9 +1089,9 @@ body.dark .tech-stack-small .tech-tag {
         <img src="photo.jpg" alt="Lishanthraa R" onerror="this.src='https://via.placeholder.com/380x380/97A776/FFFFFF?text=Lishanthraa+R'">
       </div>
     </div>
-    
+
     <div class="hero-actions-right">
-      <a href="Formal_resume.pdf" download class="btn btn-primary">
+      <a href="Lishanthraa R_Resume.pdf" download class="btn btn-primary" id="resume-download-btn">
         <i class="fas fa-download"></i> Download Resume
       </a>
       <a href="#contact" class="btn btn-secondary">
@@ -1120,15 +1115,15 @@ body.dark .tech-stack-small .tech-tag {
 <section id="stats" class="section">
   <div class="stats-container">
     <div class="stat-item">
-      <div class="stat-number" data-count="15">0</div>
-      <h4>Projects Completed</h4>
+      <div class="stat-number" data-count="3">0</div>
+      <h4>Major Projects</h4>
     </div>
     <div class="stat-item">
       <div class="stat-number" data-count="3">0</div>
       <h4>Internships</h4>
     </div>
     <div class="stat-item">
-      <div class="stat-number" data-count="10">0</div>
+      <div class="stat-number" data-count="5">0</div>
       <h4>Certifications</h4>
     </div>
     <div class="stat-item">
@@ -1141,24 +1136,78 @@ body.dark .tech-stack-small .tech-tag {
 <!-- About Section -->
 <section id="about" class="section">
   <h2 class="section-title">About Me</h2>
+  <p class="section-subtitle">A quick overview of my background, technical skill set, and academic journey.</p>
   <div class="about-content">
     <div class="about-text">
-      <p>Aspiring software professional with core strengths in full stack applications and data-driven models. Skilled in analytical problem-solving, programming, and developing scalable software solutions.</p>
-      <p>Passionate about creating efficient, user-centric applications that solve real-world problems. Always eager to learn new technologies and methodologies to stay at the forefront of software development.</p>
+      <p>I'm an aspiring software engineer with a strong foundation in full-stack application development and data-driven systems. Across three internships, I've worked on real-time video streaming platforms, AI-integrated detection pipelines, and role-based business applications — always with a focus on clean, maintainable code and measurable outcomes.</p>
+      <p>I enjoy owning problems end-to-end: designing the database schema, building the API, wiring up the frontend, and shipping something that actually works in production. I'm currently looking for full-time software engineering roles and internships where I can keep growing as a developer.</p>
     </div>
-    
+
     <div class="skills-container">
       <div class="skill-category">
-        <h4><i class="fas fa-code"></i> Technical Skills</h4>
+        <h4><i class="fas fa-code"></i> Languages</h4>
         <ul>
-          <li><i class="fas fa-check"></i> HTML, CSS, JavaScript, React</li>
-          <li><i class="fas fa-check"></i> Node.js, MongoDB, Express.js</li>
-          <li><i class="fas fa-check"></i> Java, C Programming</li>
-          <li><i class="fas fa-check"></i> Microsoft Excel, Power BI</li>
-          <li><i class="fas fa-check"></i> Flask, Scikit-learn, Pandas</li>
+          <li><i class="fas fa-check"></i> Java</li>
+          <li><i class="fas fa-check"></i> Python</li>
+          <li><i class="fas fa-check"></i> JavaScript</li>
+          <li><i class="fas fa-check"></i> SQL</li>
         </ul>
       </div>
-      
+
+      <div class="skill-category">
+        <h4><i class="fas fa-laptop-code"></i> Frontend</h4>
+        <ul>
+          <li><i class="fas fa-check"></i> React.js</li>
+          <li><i class="fas fa-check"></i> HTML5 &amp; CSS3</li>
+          <li><i class="fas fa-check"></i> Tailwind CSS</li>
+        </ul>
+      </div>
+
+      <div class="skill-category">
+        <h4><i class="fas fa-server"></i> Backend</h4>
+        <ul>
+          <li><i class="fas fa-check"></i> Node.js &amp; Express.js</li>
+          <li><i class="fas fa-check"></i> FastAPI</li>
+          <li><i class="fas fa-check"></i> REST APIs &amp; WebSockets</li>
+        </ul>
+      </div>
+
+      <div class="skill-category">
+        <h4><i class="fas fa-database"></i> Databases</h4>
+        <ul>
+          <li><i class="fas fa-check"></i> MongoDB</li>
+          <li><i class="fas fa-check"></i> PostgreSQL</li>
+          <li><i class="fas fa-check"></i> MySQL</li>
+        </ul>
+      </div>
+
+      <div class="skill-category">
+        <h4><i class="fas fa-sitemap"></i> Core CS Concepts</h4>
+        <ul>
+          <li><i class="fas fa-check"></i> Data Structures &amp; Algorithms</li>
+          <li><i class="fas fa-check"></i> Object-Oriented Programming</li>
+          <li><i class="fas fa-check"></i> DBMS</li>
+        </ul>
+      </div>
+
+      <div class="skill-category">
+        <h4><i class="fas fa-brain"></i> AI &amp; Data</h4>
+        <ul>
+          <li><i class="fas fa-check"></i> Machine Learning Basics</li>
+          <li><i class="fas fa-check"></i> OpenCV &amp; NLP</li>
+          <li><i class="fas fa-check"></i> Power BI</li>
+        </ul>
+      </div>
+
+      <div class="skill-category">
+        <h4><i class="fas fa-tools"></i> Tools &amp; Deployment</h4>
+        <ul>
+          <li><i class="fas fa-check"></i> Git &amp; GitHub</li>
+          <li><i class="fas fa-check"></i> Docker &amp; Postman</li>
+          <li><i class="fas fa-check"></i> VS Code, PyCharm, Vercel</li>
+        </ul>
+      </div>
+
       <div class="skill-category">
         <h4><i class="fas fa-users"></i> Soft Skills</h4>
         <ul>
@@ -1166,7 +1215,6 @@ body.dark .tech-stack-small .tech-tag {
           <li><i class="fas fa-check"></i> Communication</li>
           <li><i class="fas fa-check"></i> Problem Solving</li>
           <li><i class="fas fa-check"></i> Adaptability</li>
-          <li><i class="fas fa-check"></i> Continuous Learning</li>
         </ul>
       </div>
     </div>
@@ -1175,19 +1223,28 @@ body.dark .tech-stack-small .tech-tag {
   <h3 class="section-title" style="margin-top: 60px;">Education</h3>
   <div class="timeline">
     <div class="timeline-item">
-      <h4>M.Tech CSE (Integrated 5 Years)</h4>
-      <p>Sri Ramakrishna Engineering College | 2022–2027</p>
-      <p>CGPA: 8.41/10</p>
+      <h4>M.Tech Computer Science and Engineering (Integrated, 5 Years)</h4>
+      <div class="edu-meta">
+        <span>Sri Ramakrishna Engineering College, Coimbatore</span>
+        <span>2022 – 2027</span>
+      </div>
+      <p style="margin-top: 8px;">CGPA: 8.35 (through 8th semester)</p>
     </div>
     <div class="timeline-item">
-      <h4>HSC</h4>
-      <p>Hindusthan Matric Hr Sec School | 2022</p>
-      <p>Percentage: 91%</p>
+      <h4>Higher Secondary Certificate (HSC)</h4>
+      <div class="edu-meta">
+        <span>Hindusthan Matric Hr. Sec. School, Coimbatore</span>
+        <span>2021 – 2022</span>
+      </div>
+      <p style="margin-top: 8px;">Percentage: 90.83%</p>
     </div>
     <div class="timeline-item">
       <h4>SSLC</h4>
-      <p>Hindusthan Matric Hr Sec School | 2020</p>
-      <p>Percentage: 90%</p>
+      <div class="edu-meta">
+        <span>Hindusthan Matric Hr. Sec. School, Coimbatore</span>
+        <span>2019 – 2020</span>
+      </div>
+      <p style="margin-top: 8px;">Percentage: 89.8%</p>
     </div>
   </div>
 </section>
@@ -1195,51 +1252,32 @@ body.dark .tech-stack-small .tech-tag {
 <!-- Projects Section -->
 <section id="projects" class="section">
   <h2 class="section-title">Featured Projects</h2>
+  <p class="section-subtitle">Independent and academic projects showcasing full-stack, AI, and API engineering skills.</p>
   <div class="projects-grid">
     <div class="project-card">
       <div class="project-header">
         <h3>Anesthesia Controlling and Monitoring System</h3>
         <div class="project-tech">
+          <span class="tech-badge">Python</span>
           <span class="tech-badge">Flask</span>
-          <span class="tech-badge">PyMongo</span>
-          <span class="tech-badge">Pandas</span>
+          <span class="tech-badge">MongoDB</span>
+          <span class="tech-badge">REST API</span>
         </div>
       </div>
       <div class="project-body">
-        <p>Web-based platform for calculating personalized anesthesia dosages and real-time heart rate monitoring via IoT sensor integration.</p>
+        <p>A full-stack web application with a responsive UI for calculating precise anesthesia dosages using pharmacological algorithms, alongside real-time vital sign tracking.</p>
         <ul>
-          <li><i class="fas fa-check"></i> IoT-enabled real-time health tracking</li>
-          <li><i class="fas fa-check"></i> Dosage calculation based on patient credentials</li>
-          <li><i class="fas fa-check"></i> Continuous safety monitoring with alert systems</li>
+          <li><i class="fas fa-check"></i> Automated dosage calculation with 99.5% accuracy</li>
+          <li><i class="fas fa-check"></i> RESTful API endpoints with secure MongoDB storage for patient data and dosage history</li>
+          <li><i class="fas fa-check"></i> Data visualization dashboard for vitals and dosage trends</li>
         </ul>
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/Lishanthraa-cse/Anesthesia_Management" class="btn btn-primary" style="padding: 10px 20px;"><i class="fab fa-github"></i> Code</a>
-        <a href="#" class="btn btn-secondary" style="padding: 10px 20px;"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-header">
-        <h3>AI-Powered Recipe Assistant</h3>
-        <div class="project-tech">
-          <span class="tech-badge">Flask</span>
-          <span class="tech-badge">FuzzyWuzzy</span>
-          <span class="tech-badge">Voice Recognition</span>
-          <span class="tech-badge">Pandas</span>
+        <div class="impact-badges">
+          <span class="impact-badge">99.5% dosage accuracy</span>
+          <span class="impact-badge">40% less manual documentation</span>
         </div>
       </div>
-      <div class="project-body">
-        <p>Conversational assistant generating recipes and meal plans using NLP and voice recognition.</p>
-        <ul>
-          <li><i class="fas fa-check"></i> Voice-based search and interaction</li>
-          <li><i class="fas fa-check"></i> Smart meal planning based on preferences</li>
-          <li><i class="fas fa-check"></i> Interactive cooking guide</li>
-        </ul>
-      </div>
       <div class="project-links">
-        <a href="https://github.com/Lishanthraa-cse/Recipe-Assistant-Chatbot" class="btn btn-primary" style="padding: 10px 20px;"><i class="fab fa-github"></i> Code</a>
-        <a href="#" class="btn btn-secondary" style="padding: 10px 20px;"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+        <a href="https://github.com/Lishanthraa-cse/Anesthesia_Management" class="btn btn-primary" style="padding: 10px 20px;" target="_blank"><i class="fab fa-github"></i> Code</a>
       </div>
     </div>
 
@@ -1247,23 +1285,51 @@ body.dark .tech-stack-small .tech-tag {
       <div class="project-header">
         <h3>Canteen Management System</h3>
         <div class="project-tech">
-          <span class="tech-badge">React</span>
+          <span class="tech-badge">React.js</span>
           <span class="tech-badge">Node.js</span>
-          <span class="tech-badge">MongoDB</span>
-          <span class="tech-badge">Express</span>
+          <span class="tech-badge">Firebase</span>
+          <span class="tech-badge">Socket.IO</span>
         </div>
       </div>
       <div class="project-body">
-        <p>Full-stack solution with digital QR ordering and AI recommendations for user preferences.</p>
+        <p>A full-stack application enabling online food ordering, inventory tracking, digital receipts, and real-time order status updates for institutional canteens.</p>
         <ul>
-          <li><i class="fas fa-check"></i> QR-based ordering system</li>
-          <li><i class="fas fa-check"></i> AI-powered meal recommendations</li>
-          <li><i class="fas fa-check"></i> Real-time inventory tracking</li>
+          <li><i class="fas fa-check"></i> Firebase authentication for end-users and JWT-based role access for admins</li>
+          <li><i class="fas fa-check"></i> Real-time notifications via Socket.IO</li>
+          <li><i class="fas fa-check"></i> Responsive admin dashboard for menu and specials management</li>
         </ul>
+        <div class="impact-badges">
+          <span class="impact-badge">35% faster order fulfillment</span>
+        </div>
       </div>
       <div class="project-links">
-        <a href="https://github.com/Lishanthraa-cse/Canteen-Managment-System" class="btn btn-primary" style="padding: 10px 20px;"><i class="fab fa-github"></i> Code</a>
-        <a href="#" class="btn btn-secondary" style="padding: 10px 20px;"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+        <a href="https://github.com/Lishanthraa-cse/Canteen-Managment-System" class="btn btn-primary" style="padding: 10px 20px;" target="_blank"><i class="fab fa-github"></i> Code</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <h3>AI-Powered Recipe Assistant Chatbot</h3>
+        <div class="project-tech">
+          <span class="tech-badge">Flask</span>
+          <span class="tech-badge">NLP</span>
+          <span class="tech-badge">FuzzyWuzzy</span>
+          <span class="tech-badge">Speech Recognition</span>
+        </div>
+      </div>
+      <div class="project-body">
+        <p>An intelligent recipe recommendation engine with NLP-based fuzzy search, ingredient matching, dietary filtering, and a voice-enabled hands-free interface.</p>
+        <ul>
+          <li><i class="fas fa-check"></i> Voice search and audio instructions via SpeechRecognition and pyttsx3</li>
+          <li><i class="fas fa-check"></i> Smart meal planner with dietary-preference-based suggestions</li>
+          <li><i class="fas fa-check"></i> Favorites management for a personalized experience</li>
+        </ul>
+        <div class="impact-badges">
+          <span class="impact-badge">95% speech recognition accuracy</span>
+        </div>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Lishanthraa-cse/Recipe-Assistant-Chatbot" class="btn btn-primary" style="padding: 10px 20px;" target="_blank"><i class="fab fa-github"></i> Code</a>
       </div>
     </div>
   </div>
@@ -1272,90 +1338,118 @@ body.dark .tech-stack-small .tech-tag {
 <!-- Certifications Section -->
 <section id="certifications" class="section">
   <h2 class="section-title">Certifications</h2>
+  <p class="section-subtitle">Continuous learning across full-stack development, data science, and cloud fundamentals.</p>
   <div class="certifications-grid">
     <div class="certification-card">
-      <h4>Cyber Security and Privacy</h4>
-      <p>NPTEL</p>
-      <a href="https://drive.google.com/file/d/1FT1SwS5uu0EFBdHdXZ9cX0rDK3Mlbvz_/view?usp=sharing" target="_blank" class="cert-link">
-        <i class="fas fa-external-link-alt"></i> View Certificate
-      </a>
+      <h4>React JS &amp; Node JS</h4>
+      <span class="cert-issuer">Scaler</span>
+      <span class="cert-date">Oct 2025</span>
+      <div>
+        <a href="https://drive.google.com/file/d/1tV2lGmBmlcPDaPrt89mugk5SQHelStZD/view?usp=sharing" target="_blank" class="cert-link">
+          <i class="fas fa-external-link-alt"></i> View Certificate
+        </a>
+      </div>
     </div>
-    
+
+    <div class="certification-card">
+      <h4>Web Development Fundamentals</h4>
+      <span class="cert-issuer">IBM</span>
+      <span class="cert-date">2026</span>
+      <p style="font-size: 0.9rem; opacity: 0.75;">Certificate available on request</p>
+    </div>
+
     <div class="certification-card">
       <h4>Software Testing</h4>
-      <p>NPTEL</p>
-      <a href="https://drive.google.com/file/d/1FTDXMWsud_FydUqap9lHbe_YeMbPCbLd/view?usp=sharing" target="_blank" class="cert-link">
-        <i class="fas fa-external-link-alt"></i> View Certificate
-      </a>
+      <span class="cert-issuer">NPTEL</span>
+      <span class="cert-date">Oct 2024</span>
+      <div>
+        <a href="https://drive.google.com/file/d/1FTDXMWsud_FydUqap9lHbe_YeMbPCbLd/view?usp=sharing" target="_blank" class="cert-link">
+          <i class="fas fa-external-link-alt"></i> View Certificate
+        </a>
+      </div>
     </div>
-    
-    <div class="certification-card">
-      <h4>Privacy and Security in Online Social Media</h4>
-      <p>NPTEL</p>
-      <a href="https://drive.google.com/file/d/1o4_czL5ORWbSgKlyxt0Vc71T5dn1X2ew/view?usp=sharing" target="_blank" class="cert-link">
-        <i class="fas fa-external-link-alt"></i> View Certificate
-      </a>
-    </div>
-    
-    <div class="certification-card">
-      <h4>Google Cloud Study Jams</h4>
-      <p>Google Cloud</p>
-      <a href="https://drive.google.com/file/d/1fQaM9FMNiDgLAoT1VEGS_B9Uo5ToNIfx/view?usp=sharing" target="_blank" class="cert-link">
-        <i class="fas fa-external-link-alt"></i> View Certificate
-      </a>
-    </div>
-    
-    <div class="certification-card">
-      <h4>React JS</h4>
-      <p>Scaler</p>
-      <a href="https://drive.google.com/file/d/1tV2lGmBmlcPDaPrt89mugk5SQHelStZD/view?usp=sharing" target="_blank" class="cert-link">
-        <i class="fas fa-external-link-alt"></i> View Certificate
-      </a>
-    </div>
-    
-    <div class="certification-card">
-      <h4>Node JS</h4>
-      <p>Scaler</p>
-      <a href="https://drive.google.com/file/d/1RJ1czqF1PAe8_KFsUEdjpdxGuQUCuvuG/view?usp=sharing" target="_blank" class="cert-link">
-        <i class="fas fa-external-link-alt"></i> View Certificate
-      </a>
-    </div>
-    
+
     <div class="certification-card">
       <h4>Data Science Tools</h4>
-      <p>IBM</p>
-      <a href="https://drive.google.com/file/d/11K3uqGQG_-GgwAYATR4C7sngCkDdN8tW/view?usp=sharing" target="_blank" class="cert-link">
-        <i class="fas fa-external-link-alt"></i> View Certificate
-      </a>
+      <span class="cert-issuer">IBM</span>
+      <span class="cert-date">Feb 2025</span>
+      <div>
+        <a href="https://drive.google.com/file/d/11K3uqGQG_-GgwAYATR4C7sngCkDdN8tW/view?usp=sharing" target="_blank" class="cert-link">
+          <i class="fas fa-external-link-alt"></i> View Certificate
+        </a>
+      </div>
     </div>
-    
+
+    <div class="certification-card">
+      <h4>Google Cloud Study Jams</h4>
+      <span class="cert-issuer">Google Cloud</span>
+      <span class="cert-date">Oct 2023</span>
+      <div>
+        <a href="https://drive.google.com/file/d/1fQaM9FMNiDgLAoT1VEGS_B9Uo5ToNIfx/view?usp=sharing" target="_blank" class="cert-link">
+          <i class="fas fa-external-link-alt"></i> View Certificate
+        </a>
+      </div>
+    </div>
+
+    <div class="certification-card">
+      <h4>Cyber Security and Privacy</h4>
+      <span class="cert-issuer">NPTEL</span>
+      <span class="cert-date">&nbsp;</span>
+      <div>
+        <a href="https://drive.google.com/file/d/1FT1SwS5uu0EFBdHdXZ9cX0rDK3Mlbvz_/view?usp=sharing" target="_blank" class="cert-link">
+          <i class="fas fa-external-link-alt"></i> View Certificate
+        </a>
+      </div>
+    </div>
+
+    <div class="certification-card">
+      <h4>Privacy and Security in Online Social Media</h4>
+      <span class="cert-issuer">NPTEL</span>
+      <span class="cert-date">&nbsp;</span>
+      <div>
+        <a href="https://drive.google.com/file/d/1o4_czL5ORWbSgKlyxt0Vc71T5dn1X2ew/view?usp=sharing" target="_blank" class="cert-link">
+          <i class="fas fa-external-link-alt"></i> View Certificate
+        </a>
+      </div>
+    </div>
+
     <div class="certification-card">
       <h4>Introduction to Data Science</h4>
-      <p>Cisco Networking Academy</p>
-      <a href="https://drive.google.com/file/d/1rNHjulsn-zccOLgw4Rd3a8QBCYKE0Nov/view?usp=sharing" target="_blank" class="cert-link">
-        <i class="fas fa-external-link-alt"></i> View Certificate
-      </a>
+      <span class="cert-issuer">Cisco Networking Academy</span>
+      <span class="cert-date">&nbsp;</span>
+      <div>
+        <a href="https://drive.google.com/file/d/1rNHjulsn-zccOLgw4Rd3a8QBCYKE0Nov/view?usp=sharing" target="_blank" class="cert-link">
+          <i class="fas fa-external-link-alt"></i> View Certificate
+        </a>
+      </div>
     </div>
-    
+
     <div class="certification-card">
       <h4>Python 3.x Programming Course</h4>
-      <p>SkillRack</p>
-      <a href="http://www.SkillRack.com/cert/494290/LZM" target="_blank" class="cert-link">
-        <i class="fas fa-external-link-alt"></i> View Certificate
-      </a>
+      <span class="cert-issuer">SkillRack</span>
+      <span class="cert-date">&nbsp;</span>
+      <div>
+        <a href="http://www.SkillRack.com/cert/494290/LZM" target="_blank" class="cert-link">
+          <i class="fas fa-external-link-alt"></i> View Certificate
+        </a>
+      </div>
     </div>
-    
+
     <div class="certification-card">
       <h4>C Programming Course</h4>
-      <p>SkillRack</p>
-      <a href="http://www.SkillRack.com/cert/455940/OQJ" target="_blank" class="cert-link">
-        <i class="fas fa-external-link-alt"></i> View Certificate
-      </a>
+      <span class="cert-issuer">SkillRack</span>
+      <span class="cert-date">&nbsp;</span>
+      <div>
+        <a href="http://www.SkillRack.com/cert/455940/OQJ" target="_blank" class="cert-link">
+          <i class="fas fa-external-link-alt"></i> View Certificate
+        </a>
+      </div>
     </div>
-    
+
     <div class="certification-card">
       <h4>Business English Certificate Preliminary Exam</h4>
-      <p>Cambridge University</p>
+      <span class="cert-issuer">Cambridge University</span>
+      <span class="cert-date">&nbsp;</span>
     </div>
   </div>
 </section>
@@ -1363,38 +1457,42 @@ body.dark .tech-stack-small .tech-tag {
 <!-- Experience Section -->
 <section id="experience" class="section">
   <h2 class="section-title">Professional Experience</h2>
-  
+  <p class="section-subtitle">Three internships spanning full-stack development, AI integration, and frontend engineering.</p>
+
   <div class="timeline">
     <!-- Internship 1: C-DAC Chennai -->
     <div class="timeline-item">
-      <h4>Fullstack Development Intern | C-DAC Chennai</h4>
-      <p class="timeline-date">July 2025 – December 2025</p>
-      
+      <h4>Full-Stack Development Intern | C-DAC, Chennai</h4>
+      <p class="timeline-date">June 2025 – December 2025</p>
+
       <div class="project-details">
-        <h5>Project: Role-Based Interactive Video Repository System</h5>
-        
+        <h5>Project: Web-Based Surveillance and Video Analytics Platform (MERN)</h5>
+
         <div class="project-description">
-          <p>Enterprise video management system with live streaming, AI analytics, and role-based access control.</p>
-          
+          <p>Built a video management system supporting real-time multi-camera surveillance, HLS video playback, and AI-driven incident detection for enterprise deployments.</p>
+
           <div class="project-responsibilities">
-            <h6>Key Contributions:</h6>
+            <h6><i class="fas fa-list-check"></i> Key Contributions:</h6>
             <ul>
-              <li><i class="fas fa-code"></i> Built RESTful APIs with Node.js/Express.js and WebSocket for real-time streaming</li>
-              <li><i class="fas fa-shield-alt"></i> Developed RBAC system with MongoDB schema design</li>
-              <li><i class="fas fa-brain"></i> Integrated AI object detection using Python/TensorFlow</li>
-              <li><i class="fas fa-mobile-alt"></i> Created React.js interfaces with Material-UI</li>
+              <li><i class="fas fa-code"></i> Built the platform with React.js, Node.js, Express.js, MongoDB, WebSockets, and FFmpeg, enabling real-time multi-camera surveillance and HLS video playback</li>
+              <li><i class="fas fa-shield-alt"></i> Implemented JWT authentication and a secure, scalable multi-tenant architecture</li>
+              <li><i class="fas fa-brain"></i> Integrated YOLOv8 AI models with ONNX Runtime for real-time object detection, automating incident ticket generation and email alerts</li>
+              <li><i class="fas fa-chart-line"></i> Designed live analytics dashboards and camera health monitoring with modular AI detection pipelines supporting deployment across multiple organizations</li>
             </ul>
           </div>
-          
+
           <div class="technical-skills">
-            <h6>Tech Stack:</h6>
+            <h6><i class="fas fa-layer-group"></i> Tech Stack:</h6>
             <div class="tech-stack-small">
+              <span class="tech-tag">React.js</span>
               <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">React</span>
+              <span class="tech-tag">Express.js</span>
               <span class="tech-tag">MongoDB</span>
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">TensorFlow</span>
-              <span class="tech-tag">WebSocket</span>
+              <span class="tech-tag">WebSockets</span>
+              <span class="tech-tag">FFmpeg</span>
+              <span class="tech-tag">YOLOv8</span>
+              <span class="tech-tag">ONNX Runtime</span>
+              <span class="tech-tag">JWT</span>
             </div>
           </div>
         </div>
@@ -1403,34 +1501,30 @@ body.dark .tech-stack-small .tech-tag {
 
     <!-- Internship 2: Twisys Infotech -->
     <div class="timeline-item">
-      <h4>Web Development Intern | Twisys Infotech</h4>
+      <h4>Web Development Intern | Twisys Infotech, Coimbatore</h4>
       <p class="timeline-date">December 2024</p>
-      
+
       <div class="project-details">
-        <h5>Project: Beauty Parlour Management System</h5>
-        
+        <h5>Project: Beauty Parlour Management Portal</h5>
+
         <div class="project-description">
-          <p>Web application for appointment scheduling, customer management, and inventory tracking.</p>
-          
+          <p>Developed a management portal to streamline appointment scheduling, customer management, and day-to-day business operations.</p>
+
           <div class="project-responsibilities">
-            <h6>Key Contributions:</h6>
+            <h6><i class="fas fa-list-check"></i> Key Contributions:</h6>
             <ul>
-              <li><i class="fas fa-calendar-alt"></i> Built booking system with availability tracking and notifications</li>
-              <li><i class="fas fa-users"></i> Developed CRM with customer profiles and reviews</li>
-              <li><i class="fas fa-shopping-cart"></i> Implemented e-commerce with payment gateway</li>
-              <li><i class="fas fa-chart-line"></i> Created analytics dashboard</li>
+              <li><i class="fas fa-calendar-alt"></i> Built the portal using React.js, Node.js, and MongoDB, streamlining appointment scheduling and customer management</li>
+              <li><i class="fas fa-lock"></i> Implemented secure user authentication and appointment booking, improving accessibility and operational efficiency</li>
+              <li><i class="fas fa-chart-line"></i> Built admin dashboard modules for services, payments, and customer feedback, enabling centralized business operations</li>
             </ul>
           </div>
-          
+
           <div class="technical-skills">
-            <h6>Tech Stack:</h6>
+            <h6><i class="fas fa-layer-group"></i> Tech Stack:</h6>
             <div class="tech-stack-small">
-              <span class="tech-tag">HTML5/CSS3</span>
-              <span class="tech-tag">JavaScript</span>
-              <span class="tech-tag">Bootstrap</span>
-              <span class="tech-tag">PHP</span>
-              <span class="tech-tag">MySQL</span>
-              <span class="tech-tag">jQuery</span>
+              <span class="tech-tag">React.js</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">MongoDB</span>
             </div>
           </div>
         </div>
@@ -1439,34 +1533,30 @@ body.dark .tech-stack-small .tech-tag {
 
     <!-- Internship 3: Kitkat Software Technologies -->
     <div class="timeline-item">
-      <h4>Frontend Development Intern | Kitkat Software Technologies</h4>
+      <h4>Web Development Intern | Kitkat Software Technologies, Coimbatore</h4>
       <p class="timeline-date">June 2024</p>
-      
+
       <div class="project-details">
-        <h5>Project: Event Booking and Management Platform</h5>
-        
+        <h5>Project: Responsive UI &amp; Dashboard Development</h5>
+
         <div class="project-description">
-          <p>Responsive platform for event discovery, ticket registration, and event management.</p>
-          
+          <p>Developed responsive, dynamic interfaces and dashboards, focused on usability and consistent cross-device experience.</p>
+
           <div class="project-responsibilities">
-            <h6>Key Contributions:</h6>
+            <h6><i class="fas fa-list-check"></i> Key Contributions:</h6>
             <ul>
-              <li><i class="fas fa-search"></i> Developed event search with Google Maps integration</li>
-              <li><i class="fas fa-ticket-alt"></i> Built ticket booking with Stripe and QR validation</li>
-              <li><i class="fas fa-user-friends"></i> Created user dashboard with calendar</li>
-              <li><i class="fas fa-star"></i> Added rating/review system</li>
+              <li><i class="fas fa-mobile-alt"></i> Built responsive, dynamic user interfaces and dashboards using React.js, improving usability across devices</li>
+              <li><i class="fas fa-search"></i> Implemented interactive search and filtering functionality, enhancing navigation efficiency and user engagement</li>
+              <li><i class="fas fa-gauge-high"></i> Optimized frontend rendering and UI architecture to improve performance and deliver smoother cross-device experiences</li>
             </ul>
           </div>
-          
+
           <div class="technical-skills">
-            <h6>Tech Stack:</h6>
+            <h6><i class="fas fa-layer-group"></i> Tech Stack:</h6>
             <div class="tech-stack-small">
-              <span class="tech-tag">HTML5/CSS3</span>
+              <span class="tech-tag">React.js</span>
               <span class="tech-tag">JavaScript</span>
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">MongoDB</span>
-              <span class="tech-tag">Stripe API</span>
+              <span class="tech-tag">HTML5/CSS3</span>
             </div>
           </div>
         </div>
@@ -1478,6 +1568,7 @@ body.dark .tech-stack-small .tech-tag {
 <!-- Contact Section -->
 <section id="contact" class="section">
   <h2 class="section-title">Get In Touch</h2>
+  <p class="section-subtitle">Open to full-time software engineering roles and internship opportunities — let's connect.</p>
   <div class="contact-container">
     <div class="contact-info">
       <div class="contact-item">
@@ -1487,6 +1578,15 @@ body.dark .tech-stack-small .tech-tag {
         <div>
           <h4>Email</h4>
           <p>lishanthraa.1805@gmail.com</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">
+          <i class="fas fa-phone"></i>
+        </div>
+        <div>
+          <h4>Phone</h4>
+          <p>+91 97428 84264</p>
         </div>
       </div>
       <div class="contact-item">
@@ -1540,13 +1640,13 @@ body.dark .tech-stack-small .tech-tag {
 <footer>
   <div class="footer-content">
     <h3>Lishanthraa R</h3>
-    <p>Full Stack Developer & Data Enthusiast</p>
+    <p>Full Stack Developer | Open to Opportunities</p>
     <div class="footer-social">
       <a href="https://github.com/Lishanthraa-cse" target="_blank"><i class="fab fa-github"></i></a>
       <a href="http://www.linkedin.com/in/lishanthraa-r-a258462a1" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="mailto:lishanthraa.1805@gmail.com"><i class="fas fa-envelope"></i></a>
     </div>
-    <p>© 2025 Lishanthraa R. All rights reserved.</p>
+    <p>© 2026 Lishanthraa R. All rights reserved.</p>
   </div>
 </footer>
 
@@ -1566,18 +1666,18 @@ body.dark .tech-stack-small .tech-tag {
       this.ctx = this.canvas.getContext('2d');
       this.particles = [];
       this.particleCount = 100;
-      
+
       this.init();
       this.animate();
       window.addEventListener('resize', () => this.init());
     }
-    
+
     init() {
       this.canvas.width = window.innerWidth;
       this.canvas.height = window.innerHeight;
       this.createParticles();
     }
-    
+
     createParticles() {
       this.particles = [];
       for (let i = 0; i < this.particleCount; i++) {
@@ -1591,43 +1691,34 @@ body.dark .tech-stack-small .tech-tag {
         });
       }
     }
-    
+
     animate() {
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-      
+
       for (let particle of this.particles) {
         particle.x += particle.speedX;
         particle.y += particle.speedY;
-        
+
         if (particle.x > this.canvas.width) particle.x = 0;
         if (particle.x < 0) particle.x = this.canvas.width;
         if (particle.y > this.canvas.height) particle.y = 0;
         if (particle.y < 0) particle.y = this.canvas.height;
-        
+
         this.ctx.beginPath();
         this.ctx.fillStyle = particle.color + '50';
         this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
         this.ctx.fill();
       }
-      
+
       requestAnimationFrame(() => this.animate());
     }
   }
 
-  // Set the text directly since we only want "Full Stack Developer"
-  document.addEventListener('DOMContentLoaded', () => {
-    const typedTextElement = document.querySelector('.typed-text');
-    if (typedTextElement) {
-      typedTextElement.textContent = "Full Stack Developer";
-    }
-  });
-
   // Section Navigation
   const sections = document.querySelectorAll('.section');
   const navButtons = document.querySelectorAll('#main-nav button');
-  
+
   function switchSection(id) {
-    // Update active section
     sections.forEach(section => {
       section.classList.remove('active');
       if (section.id === id) {
@@ -1635,16 +1726,14 @@ body.dark .tech-stack-small .tech-tag {
         window.history.pushState({}, '', `#${id}`);
       }
     });
-    
-    // Update active nav button
+
     navButtons.forEach(btn => {
       btn.classList.remove('active');
       if (btn.dataset.target === id) {
         btn.classList.add('active');
       }
     });
-    
-    // Scroll to section
+
     const targetSection = document.getElementById(id);
     if (targetSection) {
       targetSection.scrollIntoView({ behavior: 'smooth' });
@@ -1655,12 +1744,12 @@ body.dark .tech-stack-small .tech-tag {
   function animateCounters() {
     const counters = document.querySelectorAll('.stat-number');
     const speed = 200;
-    
+
     counters.forEach(counter => {
       const target = parseInt(counter.dataset.count);
       const increment = target / speed;
       let current = 0;
-      
+
       const updateCounter = () => {
         if (current < target) {
           current += increment;
@@ -1670,7 +1759,7 @@ body.dark .tech-stack-small .tech-tag {
           counter.textContent = target;
         }
       };
-      
+
       updateCounter();
     });
   }
@@ -1702,7 +1791,7 @@ body.dark .tech-stack-small .tech-tag {
   document.addEventListener('DOMContentLoaded', () => {
     // Initialize particle background
     new ParticleBackground();
-    
+
     // Set up nav button clicks
     navButtons.forEach(btn => {
       btn.addEventListener('click', (e) => {
@@ -1710,7 +1799,7 @@ body.dark .tech-stack-small .tech-tag {
         switchSection(btn.dataset.target);
       });
     });
-    
+
     // Set up contact button
     const contactBtn = document.getElementById('contact-btn');
     if (contactBtn) {
@@ -1719,7 +1808,7 @@ body.dark .tech-stack-small .tech-tag {
         switchSection('contact');
       });
     }
-    
+
     // Set up contact me button in hero section
     const heroContactBtn = document.querySelector('.hero-actions-right .btn-secondary');
     if (heroContactBtn) {
@@ -1728,13 +1817,13 @@ body.dark .tech-stack-small .tech-tag {
         switchSection('contact');
       });
     }
-    
+
     // Check for hash in URL
     if (window.location.hash) {
       const hash = window.location.hash.substring(1);
       switchSection(hash);
     }
-    
+
     // Initialize counters when stats section is in view
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -1744,32 +1833,27 @@ body.dark .tech-stack-small .tech-tag {
         }
       });
     }, { threshold: 0.5 });
-    
+
     const statsSection = document.getElementById('stats');
     if (statsSection) {
       observer.observe(statsSection);
     }
-    
-    // Fix resume download issue
-    const resumeLink = document.querySelector('a[href*="Formal_resume.pdf"]');
+
+    // Resume download safety check (matches the actual href, avoids the old filename mismatch bug)
+    const resumeLink = document.getElementById('resume-download-btn');
     if (resumeLink) {
-      // Add timestamp to prevent caching issues
-      const timestamp = new Date().getTime();
-      resumeLink.href = 'Formal_resume.pdf' + '?v=' + timestamp;
-      
-      // Add event listener to handle download
       resumeLink.addEventListener('click', function(e) {
-        // If the file doesn't exist, show an alert
-        fetch('Formal_resume.pdf')
+        const resumeHref = resumeLink.getAttribute('href');
+        fetch(resumeHref)
           .then(response => {
             if (!response.ok) {
               e.preventDefault();
-              alert('Resume file not found. Please ensure "Formal_resume.pdf" is in the same folder as this HTML file.');
+              alert('Resume file not found. Please ensure "' + resumeHref + '" is in the same folder as this HTML file.');
             }
           })
           .catch(() => {
             e.preventDefault();
-            alert('Resume file not found. Please ensure "Formal_resume.pdf" is in the same folder as this HTML file.');
+            alert('Resume file not found. Please ensure "' + resumeHref + '" is in the same folder as this HTML file.');
           });
       });
     }
