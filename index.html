@@ -1,13 +1,3 @@
-Here is the completely updated `.html` file. 
-
-### Why this happened and how it was fixed:
-1. **CSS Specificity Conflict**: The class rule `.section.active { display: block; }` has a higher CSS specificity `(0, 2, 0)` than `header { display: flex; }` `(0, 0, 1)`. Because `<header id="home" class="section active">` has both classes, the browser applied `display: block`, completely disabling Flexbox and causing the right column (image and buttons) to fall below the left column.
-2. **Aggressive 1200px Breakpoint**: A `@media (max-width: 1200px)` rule was also forcing `flex-direction: column` on typical laptops and desktop browser windows. This has been updated to a standard `992px` responsive breakpoint.
-3. **Removed Line**: The line `<p>© 2026 Lishanthraa R. All rights reserved.</p>` has been removed from the footer.
-
----
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1998,4 +1988,3 @@ Here is the completely updated `.html` file.
 
 </body>
 </html>
-```
