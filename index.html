@@ -1,3 +1,13 @@
+Here is the completely updated `.html` file. 
+
+### Why this happened and how it was fixed:
+1. **CSS Specificity Conflict**: The class rule `.section.active { display: block; }` has a higher CSS specificity `(0, 2, 0)` than `header { display: flex; }` `(0, 0, 1)`. Because `<header id="home" class="section active">` has both classes, the browser applied `display: block`, completely disabling Flexbox and causing the right column (image and buttons) to fall below the left column.
+2. **Aggressive 1200px Breakpoint**: A `@media (max-width: 1200px)` rule was also forcing `flex-direction: column` on typical laptops and desktop browser windows. This has been updated to a standard `992px` responsive breakpoint.
+3. **Removed Line**: The line `<p>© 2026 Lishanthraa R. All rights reserved.</p>` has been removed from the footer.
+
+---
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,9 +104,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 40px 10% 0;
+    padding: 100px 10% 40px;
     position: relative;
     overflow: hidden;
+    gap: 40px;
   }
 
   header::before {
@@ -112,8 +123,21 @@
     z-index: 0;
   }
 
+  /* Specific rule ensuring header stays flex when active */
+  header#home.section.active,
+  header.section.active {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    opacity: 1;
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
   .hero-content {
-    width: 50%;
+    flex: 1 1 58%;
+    max-width: 680px;
     z-index: 2;
     position: relative;
   }
@@ -129,7 +153,7 @@
   }
 
   .hero-content h1 {
-    font-size: 3.8rem;
+    font-size: 3.5rem;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1rem;
@@ -142,15 +166,15 @@
 
   .hero-content .typed-text {
     font-family: 'Fira Code', monospace;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     margin-bottom: 2rem;
     color: var(--primary);
     animation: fadeInUp 1s ease-out 0.2s both;
-    min-height: 3rem;
+    min-height: 2.6rem;
   }
 
   .hero-content p {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     margin-bottom: 2rem;
     opacity: 0.9;
     animation: fadeInUp 1s ease-out 0.4s both;
@@ -173,6 +197,7 @@
     color: var(--primary);
     margin-right: 12px;
     font-size: 1.2rem;
+    flex-shrink: 0;
   }
 
   /* Tech Stack */
@@ -208,7 +233,9 @@
 
   /* Right Column Layout */
   .hero-right-column {
-    width: 40%;
+    flex: 0 0 380px;
+    width: 380px;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -227,8 +254,8 @@
 
   .image-container {
     position: relative;
-    width: 380px;
-    height: 380px;
+    width: 340px;
+    height: 340px;
   }
 
   .image-container img {
@@ -260,7 +287,7 @@
     flex-direction: column;
     gap: 15px;
     width: 100%;
-    max-width: 380px;
+    max-width: 340px;
     animation: fadeInUp 1s ease-out 1s both;
   }
 
@@ -988,46 +1015,128 @@
   }
 
   /* Responsive Design */
-  @media (max-width: 1200px) {
-    header {
+  @media (max-width: 992px) {
+    header,
+    header#home.section.active,
+    header.section.active {
       flex-direction: column;
       text-align: center;
-      padding-top: 140px;
+      padding-top: 130px;
+      gap: 50px;
     }
 
-    .hero-content { width: 100%; margin-bottom: 60px; }
-    .hero-right-column { width: 100%; }
-    .image-container { width: 300px; height: 300px; }
-    .hero-actions-right { max-width: 300px; margin: 0 auto; }
-    .about-content { grid-template-columns: 1fr; }
-    .contact-container { grid-template-columns: 1fr; }
+    .hero-content {
+      flex: 1 1 100%;
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .hero-right-column {
+      flex: 1 1 100%;
+      width: 100%;
+      max-width: 380px;
+    }
+
+    .image-container {
+      width: 290px;
+      height: 290px;
+    }
+
+    .hero-actions-right {
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    .highlight-list li {
+      justify-content: center;
+    }
+
+    .tech-stack {
+      justify-content: center;
+    }
+
+    .about-content {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-container {
+      grid-template-columns: 1fr;
+    }
   }
 
   @media (max-width: 768px) {
-    .status-banner { font-size: 0.75rem; padding: 6px; }
+    .status-banner {
+      font-size: 0.75rem;
+      padding: 6px;
+    }
 
     nav {
       top: 40px;
       right: 15px;
-      padding: 12px 20px;
+      padding: 10px 15px;
       flex-wrap: wrap;
       justify-content: center;
       width: calc(100% - 30px);
     }
 
-    nav button { padding: 6px 12px; font-size: 14px; }
-    .hero-content h1 { font-size: 2.8rem; }
-    .typed-text { font-size: 1.5rem; }
-    .section-title { font-size: 2.2rem; }
-    .projects-grid { grid-template-columns: 1fr; }
-    .certifications-grid { grid-template-columns: 1fr; }
-    .floating-btn { width: 50px; height: 50px; font-size: 1.2rem; }
-    #dark-toggle { bottom: 20px; left: 20px; }
-    #contact-btn { bottom: 20px; right: 20px; }
-    .timeline-item { padding: 20px; }
-    .project-details h5 { font-size: 1.3rem; }
-    .tech-stack-small { gap: 6px; }
-    .tech-stack-small .tech-tag { padding: 5px 10px; font-size: 0.8rem; }
+    nav button {
+      padding: 6px 10px;
+      font-size: 13px;
+    }
+
+    .hero-content h1 {
+      font-size: 2.6rem;
+    }
+
+    .typed-text {
+      font-size: 1.3rem;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+    }
+
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .certifications-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .floating-btn {
+      width: 50px;
+      height: 50px;
+      font-size: 1.2rem;
+    }
+
+    #dark-toggle {
+      bottom: 20px;
+      left: 20px;
+    }
+
+    #contact-btn {
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .timeline-item {
+      padding: 20px;
+    }
+
+    .project-details h5 {
+      font-size: 1.3rem;
+    }
+
+    .tech-stack-small {
+      gap: 6px;
+    }
+
+    .tech-stack-small .tech-tag {
+      padding: 5px 10px;
+      font-size: 0.8rem;
+    }
   }
 
   /* Particle Background */
@@ -1039,26 +1148,6 @@
     height: 100%;
     z-index: -1;
     pointer-events: none;
-  }
-
-  /* ===== FIX FOR HERO LAYOUT ===== */
-  header {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-  }
-
-  @media (min-width: 1201px) {
-    header {
-      flex-wrap: nowrap;
-    }
-    .hero-content {
-      flex: 1 1 55%;
-    }
-    .hero-right-column {
-      flex: 1 1 35%;
-      max-width: 420px;
-    }
   }
 </style>
 </head>
@@ -1683,7 +1772,6 @@
       <a href="http://www.linkedin.com/in/lishanthraa-r-a258462a1" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="mailto:lishanthraa.1805@gmail.com"><i class="fas fa-envelope"></i></a>
     </div>
-    <p>© 2026 Lishanthraa R. All rights reserved.</p>
   </div>
 </footer>
 
@@ -1910,3 +1998,4 @@
 
 </body>
 </html>
+```
