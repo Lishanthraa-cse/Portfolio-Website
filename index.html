@@ -1040,6 +1040,26 @@
     z-index: -1;
     pointer-events: none;
   }
+
+  /* ===== FIX FOR HERO LAYOUT ===== */
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  @media (min-width: 1201px) {
+    header {
+      flex-wrap: nowrap;
+    }
+    .hero-content {
+      flex: 1 1 55%;
+    }
+    .hero-right-column {
+      flex: 1 1 35%;
+      max-width: 420px;
+    }
+  }
 </style>
 </head>
 
@@ -1060,7 +1080,7 @@
     <div class="eyebrow">Software Engineer</div>
     <h1>Lishanthraa R</h1>
     <div class="typed-text">MERN Stack &amp; AI-Integrated Applications</div>
-    <p>Integrated M.Tech Computer Science and Engineering student graduating in 2027 with hands-on industry experience across three internships and a strong foundation in Data Structures &amp; Algorithms, DBMS, and Object-Oriented Programming. I build production-ready web applications and REST APIs using modern engineering practices.</p>
+    <p>Integrated M.Tech Computer Science and Engineering student graduating in 2027 with strong knowledge of Java, Data Structures &amp; Algorithms, Object-Oriented Programming, DBMS, SQL, and software development. Experienced in designing and developing scalable software applications using React.js, Node.js, Express.js, MongoDB, and REST APIs through internships and academic projects. Strong problem-solving, analytical, debugging, and teamwork skills with a quick-learning mindset.</p>
 
     <ul class="highlight-list">
       <li><i class="fas fa-code-branch"></i> Shipped a real-time video surveillance platform with AI object detection at C-DAC, Chennai</li>
@@ -1187,14 +1207,16 @@
           <li><i class="fas fa-check"></i> Data Structures &amp; Algorithms</li>
           <li><i class="fas fa-check"></i> Object-Oriented Programming</li>
           <li><i class="fas fa-check"></i> DBMS</li>
+          <li><i class="fas fa-check"></i> Operating Systems</li>
+          <li><i class="fas fa-check"></i> Computer Networks</li>
         </ul>
       </div>
 
       <div class="skill-category">
         <h4><i class="fas fa-brain"></i> AI &amp; Data</h4>
         <ul>
+          <li><i class="fas fa-check"></i> Computer Vision (YOLOv8, OpenCV)</li>
           <li><i class="fas fa-check"></i> Machine Learning Basics</li>
-          <li><i class="fas fa-check"></i> OpenCV &amp; NLP</li>
           <li><i class="fas fa-check"></i> Power BI</li>
         </ul>
       </div>
@@ -1203,8 +1225,8 @@
         <h4><i class="fas fa-tools"></i> Tools &amp; Deployment</h4>
         <ul>
           <li><i class="fas fa-check"></i> Git &amp; GitHub</li>
-          <li><i class="fas fa-check"></i> Docker &amp; Postman</li>
-          <li><i class="fas fa-check"></i> VS Code, PyCharm, Vercel</li>
+          <li><i class="fas fa-check"></i> Docker (Basics), Postman</li>
+          <li><i class="fas fa-check"></i> VS Code, PyCharm</li>
         </ul>
       </div>
 
@@ -1228,13 +1250,13 @@
         <span>Sri Ramakrishna Engineering College, Coimbatore</span>
         <span>2022 – 2027</span>
       </div>
-      <p style="margin-top: 8px;">CGPA: 8.35 (through 8th semester)</p>
+      <p style="margin-top: 8px;">CGPA: 8.35 (Until 8th Semester)</p>
     </div>
     <div class="timeline-item">
       <h4>Higher Secondary Certificate (HSC)</h4>
       <div class="edu-meta">
         <span>Hindusthan Matric Hr. Sec. School, Coimbatore</span>
-        <span>2021 – 2022</span>
+        <span>2019 – 2022</span>
       </div>
       <p style="margin-top: 8px;">Percentage: 90.83%</p>
     </div>
@@ -1259,22 +1281,17 @@
         <h3>Anesthesia Controlling and Monitoring System</h3>
         <div class="project-tech">
           <span class="tech-badge">Python</span>
-          <span class="tech-badge">Flask</span>
-          <span class="tech-badge">MongoDB</span>
-          <span class="tech-badge">REST API</span>
+          <span class="tech-badge">HTML</span>
+          <span class="tech-badge">CSS</span>
+          <span class="tech-badge">JavaScript</span>
         </div>
       </div>
       <div class="project-body">
         <p>A full-stack web application with a responsive UI for calculating precise anesthesia dosages using pharmacological algorithms, alongside real-time vital sign tracking.</p>
         <ul>
-          <li><i class="fas fa-check"></i> Automated dosage calculation with 99.5% accuracy</li>
-          <li><i class="fas fa-check"></i> RESTful API endpoints with secure MongoDB storage for patient data and dosage history</li>
-          <li><i class="fas fa-check"></i> Data visualization dashboard for vitals and dosage trends</li>
+          <li><i class="fas fa-check"></i> Implemented JavaScript-based dosage calculation algorithms for drugs including Lidocaine, Bupivacaine, Articaine, and Mepivacaine, generating dosage, volume, and cartridge requirements.</li>
+          <li><i class="fas fa-check"></i> Designed an interactive monitoring interface to display real-time patient vital parameters and dosage results, reducing manual calculation effort and improving clinical workflow efficiency.</li>
         </ul>
-        <div class="impact-badges">
-          <span class="impact-badge">99.5% dosage accuracy</span>
-          <span class="impact-badge">40% less manual documentation</span>
-        </div>
       </div>
       <div class="project-links">
         <a href="https://github.com/Lishanthraa-cse/Anesthesia_Management" class="btn btn-primary" style="padding: 10px 20px;" target="_blank"><i class="fab fa-github"></i> Code</a>
@@ -1287,20 +1304,18 @@
         <div class="project-tech">
           <span class="tech-badge">React.js</span>
           <span class="tech-badge">Node.js</span>
-          <span class="tech-badge">Firebase</span>
+          <span class="tech-badge">Express.js</span>
+          <span class="tech-badge">MongoDB</span>
           <span class="tech-badge">Socket.IO</span>
+          <span class="tech-badge">JWT</span>
         </div>
       </div>
       <div class="project-body">
-        <p>A full-stack application enabling online food ordering, inventory tracking, digital receipts, and real-time order status updates for institutional canteens.</p>
+        <p>A full-stack application enabling online food ordering, menu browsing, scheduled pickups, digital receipts, and real-time order tracking for institutional canteens.</p>
         <ul>
-          <li><i class="fas fa-check"></i> Firebase authentication for end-users and JWT-based role access for admins</li>
-          <li><i class="fas fa-check"></i> Real-time notifications via Socket.IO</li>
-          <li><i class="fas fa-check"></i> Responsive admin dashboard for menu and specials management</li>
+          <li><i class="fas fa-check"></i> Built a secure authentication layer using JWT with role-based access control (Student/Admin), coupled with Socket.IO for live order status notifications and a kitchen Kanban dashboard.</li>
+          <li><i class="fas fa-check"></i> Achieved faster order fulfillment through streamlined REST APIs, automated status updates, inventory availability toggles, and a responsive admin dashboard for menu and specials management.</li>
         </ul>
-        <div class="impact-badges">
-          <span class="impact-badge">35% faster order fulfillment</span>
-        </div>
       </div>
       <div class="project-links">
         <a href="https://github.com/Lishanthraa-cse/Canteen-Managment-System" class="btn btn-primary" style="padding: 10px 20px;" target="_blank"><i class="fab fa-github"></i> Code</a>
@@ -1311,22 +1326,19 @@
       <div class="project-header">
         <h3>AI-Powered Recipe Assistant Chatbot</h3>
         <div class="project-tech">
+          <span class="tech-badge">Python</span>
           <span class="tech-badge">Flask</span>
-          <span class="tech-badge">NLP</span>
-          <span class="tech-badge">FuzzyWuzzy</span>
-          <span class="tech-badge">Speech Recognition</span>
+          <span class="tech-badge">SQLite</span>
+          <span class="tech-badge">Pandas</span>
+          <span class="tech-badge">Bootstrap</span>
         </div>
       </div>
       <div class="project-body">
-        <p>An intelligent recipe recommendation engine with NLP-based fuzzy search, ingredient matching, dietary filtering, and a voice-enabled hands-free interface.</p>
+        <p>An intelligent recipe search engine with prefix-based autocomplete, ingredient matching, smart meal planning, and a voice-enabled hands-free interface.</p>
         <ul>
-          <li><i class="fas fa-check"></i> Voice search and audio instructions via SpeechRecognition and pyttsx3</li>
-          <li><i class="fas fa-check"></i> Smart meal planner with dietary-preference-based suggestions</li>
-          <li><i class="fas fa-check"></i> Favorites management for a personalized experience</li>
+          <li><i class="fas fa-check"></i> Created a smart meal planner that generates daily meal suggestions based on calorie and protein targets, with dietary preference filtering, serving-size scaling, and a favorites system.</li>
+          <li><i class="fas fa-check"></i> Built a voice-enabled cooking mode using the Web Speech API, enabling users to search recipes and navigate instructions by voice, with automatic timers and an interactive nutrition dashboard using Chart.js.</li>
         </ul>
-        <div class="impact-badges">
-          <span class="impact-badge">95% speech recognition accuracy</span>
-        </div>
       </div>
       <div class="project-links">
         <a href="https://github.com/Lishanthraa-cse/Recipe-Assistant-Chatbot" class="btn btn-primary" style="padding: 10px 20px;" target="_blank"><i class="fab fa-github"></i> Code</a>
@@ -1354,8 +1366,12 @@
     <div class="certification-card">
       <h4>Web Development Fundamentals</h4>
       <span class="cert-issuer">IBM</span>
-      <span class="cert-date">2026</span>
-      <p style="font-size: 0.9rem; opacity: 0.75;">Certificate available on request</p>
+      <span class="cert-date">July 2026</span>
+      <div>
+        <a href="https://drive.google.com/file/d/1FLljUT1MkMfshrbdw97UunX7UqPA60RV/view?usp=sharing" target="_blank" class="cert-link">
+          <i class="fas fa-external-link-alt"></i> View Certificate
+        </a>
+      </div>
     </div>
 
     <div class="certification-card">
@@ -1375,6 +1391,28 @@
       <span class="cert-date">Feb 2025</span>
       <div>
         <a href="https://drive.google.com/file/d/11K3uqGQG_-GgwAYATR4C7sngCkDdN8tW/view?usp=sharing" target="_blank" class="cert-link">
+          <i class="fas fa-external-link-alt"></i> View Certificate
+        </a>
+      </div>
+    </div>
+
+    <div class="certification-card">
+      <h4>Generative AI for Beginners</h4>
+      <span class="cert-issuer">Udemy</span>
+      <span class="cert-date">July 2026</span>
+      <div>
+        <a href="https://drive.google.com/file/d/1r5PuHn8-00B2H6oQM9ELAbrEBK0atHgy/view?usp=sharing" target="_blank" class="cert-link">
+          <i class="fas fa-external-link-alt"></i> View Certificate
+        </a>
+      </div>
+    </div>
+
+    <div class="certification-card">
+      <h4>Bubble AI: Learn Full Stack No-Code App Development</h4>
+      <span class="cert-issuer">Infosys Springboard</span>
+      <span class="cert-date">July 2026</span>
+      <div>
+        <a href="https://drive.google.com/file/d/1EgD2Q9WJgdhXoWLMbBxgowACDSNrxIjt/view?usp=sharing" target="_blank" class="cert-link">
           <i class="fas fa-external-link-alt"></i> View Certificate
         </a>
       </div>
@@ -1474,10 +1512,9 @@
           <div class="project-responsibilities">
             <h6><i class="fas fa-list-check"></i> Key Contributions:</h6>
             <ul>
-              <li><i class="fas fa-code"></i> Built the platform with React.js, Node.js, Express.js, MongoDB, WebSockets, and FFmpeg, enabling real-time multi-camera surveillance and HLS video playback</li>
-              <li><i class="fas fa-shield-alt"></i> Implemented JWT authentication and a secure, scalable multi-tenant architecture</li>
-              <li><i class="fas fa-brain"></i> Integrated YOLOv8 AI models with ONNX Runtime for real-time object detection, automating incident ticket generation and email alerts</li>
-              <li><i class="fas fa-chart-line"></i> Designed live analytics dashboards and camera health monitoring with modular AI detection pipelines supporting deployment across multiple organizations</li>
+              <li><i class="fas fa-code"></i> Collaborated with a team to develop a Video Management System using React.js, Node.js, MongoDB, and Git, contributing to feature development, REST API integration, and real-time video streaming.</li>
+              <li><i class="fas fa-brain"></i> Integrated YOLOv8 AI models with ONNX Runtime for real-time object detection, automating incident ticket generation, email alerts, and live analytics for enhanced surveillance monitoring.</li>
+              <li><i class="fas fa-shield-alt"></i> Designed a scalable multi-tenant architecture with modular backend services and responsive dashboards by integrating frontend, backend, and AI services through REST APIs, while using Postman and Git/GitHub for API testing and collaborative development.</li>
             </ul>
           </div>
 
@@ -1513,9 +1550,9 @@
           <div class="project-responsibilities">
             <h6><i class="fas fa-list-check"></i> Key Contributions:</h6>
             <ul>
-              <li><i class="fas fa-calendar-alt"></i> Built the portal using React.js, Node.js, and MongoDB, streamlining appointment scheduling and customer management</li>
-              <li><i class="fas fa-lock"></i> Implemented secure user authentication and appointment booking, improving accessibility and operational efficiency</li>
-              <li><i class="fas fa-chart-line"></i> Built admin dashboard modules for services, payments, and customer feedback, enabling centralized business operations</li>
+              <li><i class="fas fa-calendar-alt"></i> Developed a beauty parlour management portal using React.js, Node.js, and MongoDB, streamlining appointment scheduling and customer management.</li>
+              <li><i class="fas fa-lock"></i> Implemented secure user authentication and appointment booking features, improving customer experience and operational efficiency.</li>
+              <li><i class="fas fa-chart-line"></i> Built admin dashboard modules for managing services, payments, and customer feedback, enabling centralized business operations and better decision-making.</li>
             </ul>
           </div>
 
@@ -1545,9 +1582,9 @@
           <div class="project-responsibilities">
             <h6><i class="fas fa-list-check"></i> Key Contributions:</h6>
             <ul>
-              <li><i class="fas fa-mobile-alt"></i> Built responsive, dynamic user interfaces and dashboards using React.js, improving usability across devices</li>
-              <li><i class="fas fa-search"></i> Implemented interactive search and filtering functionality, enhancing navigation efficiency and user engagement</li>
-              <li><i class="fas fa-gauge-high"></i> Optimized frontend rendering and UI architecture to improve performance and deliver smoother cross-device experiences</li>
+              <li><i class="fas fa-mobile-alt"></i> Developed responsive and dynamic user interfaces and dashboards using React.js, improving usability and ensuring a consistent experience across devices.</li>
+              <li><i class="fas fa-search"></i> Implemented interactive search and filtering functionality, enhancing navigation efficiency and overall user engagement.</li>
+              <li><i class="fas fa-gauge-high"></i> Improved application performance through component optimization, reusable UI architecture, and efficient state management.</li>
             </ul>
           </div>
 
@@ -1839,7 +1876,7 @@
       observer.observe(statsSection);
     }
 
-    // Resume download safety check (matches the actual href, avoids the old filename mismatch bug)
+    // Resume download safety check
     const resumeLink = document.getElementById('resume-download-btn');
     if (resumeLink) {
       resumeLink.addEventListener('click', function(e) {
